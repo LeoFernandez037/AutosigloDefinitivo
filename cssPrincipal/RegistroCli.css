@@ -1,0 +1,142 @@
+body {
+    background: #ffffff;
+    height: 1024px;
+    width: 1440px;
+}
+
+.icon-image {
+    position: absolute;
+    width: 50px;
+    top: 5px;
+    left: 30px;
+    z-index: 1;
+    margin: 40px -10;
+}
+
+.auto_derecha {
+    position: fixed;
+    bottom: 0;
+    right: -130px;
+    width: 854px;
+    height: 416;
+    z-index: -1;
+}
+
+.auto_izquierda {
+    position: fixed;
+    bottom: 0;
+    left: -140px;
+    width: 825px;
+    height: 526.24;
+    z-index: -1;
+    bottom: 120px;
+}
+
+.LOGO2 {
+    width: 80px;
+    height: 80px;
+    /* object-fit: cover; */
+}
+
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    color: #000000;
+    font-size: 100px;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 1px;
+}
+
+p {
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+}
+
+.login-box {
+    background-color: #ffffff80;
+    border-radius: 10px;
+    border-color: #FF6060;
+    border-width: 10px;
+    border-style: solid;
+    text-align: center;
+    height: 759px;
+    width: 1025px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+}
+
+.login-box input {
+    display: flex;
+    height: 20px;
+    width: 320px;
+    padding: 12px;
+    margin: 10px;
+    border: 5px solid #ffffff;
+    border-radius: 7px;
+    border-color: #c2bcbc;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.left-column label,
+.right-column label {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-box label {
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-box input::placeholder {
+    color: #FF6060;
+}
+
+.login-box button {
+    background-color: #FF6060;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    height: 47px;
+    width: 355px;
+    font-size: 25px;
+    margin: 20px;
+    margin-bottom: 30px;
+}
+
+.login-box button:hover {
+    background-color: #ff0000;
+}
+
+.contraseñaGenerada {
+    font-family: 'Poppins', sans-serif;
+    color: #FF6060;
+    margin: 10px;
+    margin-bottom: 30px;
+}

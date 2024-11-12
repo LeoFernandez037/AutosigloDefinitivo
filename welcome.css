@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1B232C; /* Fondo oscuro */
+    color: white; /* Texto blanco para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    text-align: center;
+}
+
+.welcome-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.admin-image {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%; /* Hacer la imagen circular */
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+.start-button {
+    background-color: #FF6060; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    transition: background-color 0.3s; /* Transición para el efecto hover */
+}
+
+.start-button:hover {
+    background-color: #d45555; /* Color de fondo al pasar el mouse */
+}

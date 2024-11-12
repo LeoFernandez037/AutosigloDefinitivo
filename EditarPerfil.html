@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssPrincipal/EditarPerfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <title>Editar Perfil</title>
+</head>
+<body>
+    <h1>IMPORTADORA</h1>
+    <h2>AUTOSIGLO</h2>
+    <div class="login-container">
+        <a href="index.php" class="icon-link">
+            <img src="./Imagenes/atras.png" alt="Salir" class="icon-image">
+        </a>
+        <div class="login-box">
+            <h3>Editar Perfil</h3>
+                <form action="EditarPerfil.php" method="POST" enctype="multipart/form-data">
+                    <div class="foto-container">
+                        <img src="./Imagenes/SIU.png" alt="Foto de Perfil" class="foto-perfil" id="fotoPerfil">
+                        <label for="foto" class="icon-camera">
+                            <img src="./Imagenes/camara.png" class="icon-image-camera">
+                        </label>
+                        <input type="file" name="foto" accept="image/*" id="foto" style="display:none;">
+                    </div>
+                
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" name="nickname" placeholder="Shally" required>
+                
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" placeholder="1TE4567890" required>
+                
+                    <input type="submit" value="Actualizar Perfil">
+                </form>
+        </div>
+    </div>
+    <img src="./Imagenes/1.png" alt="Auto" class="auto_derecha">
+    <img src="./Imagenes/2.png" alt="Auto2" class="auto_izquierda">
+
+    <script>
+        const fotoInput = document.getElementById('foto');
+        const fotoPerfil = document.getElementById('fotoPerfil');
+
+        fotoInput.addEventListener('change', function() {
+            const file = fotoInput.files[0]; 
+            if (file) {
+                const reader = new FileReader(); 
+                reader.onload = function(e) {
+                    fotoPerfil.src = e.target.result; 
+                }
+                reader.readAsDataURL(file); 
+            }
+        });
+    </script>
+</body>
+</html>

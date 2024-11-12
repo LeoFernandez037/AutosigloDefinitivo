@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - AUTOSIGLO</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo2.png" alt="Logo de AUTOSIGLO" class="logo">
+            <h1>GESIMAS</h1>
+        </div>
+        <nav class="nav-header">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li>
+                    <div class="profile-menu" id="profileMenu">
+                        <img src="imagenes/adm.jpeg" alt="Perfil" class="profile-pic">
+                        <span>Administrador</span>
+                        <i class="arrow-down"></i>
+                        <ul class="dropdown" id="profileDropdown">
+                            <li><a href="#" id="verPerfil">Ver Perfil</a></li>
+                            <li><a href="#" id="editarPerfil">Editar Perfil</a></li>
+                            <li><a href="index.php" id="cerrarSesion">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Productos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="showSection('autos')">Autos</a></li>
+                        <li><a href="#" onclick="showSection('repuestos')">Repuestos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Trabajadores</a></li>
+                <li><a href="#">Compras</a></li>
+                <li><a href="#">Ventas</a></li>
+            </ul>
+        </aside>
+
+        <section id="content">
+            <div id="autos" class="section" style="display: none;">
+                <h2>Autos</h2>
+                <h3>LISTA DE AUTOS</h3>
+
+                <button onclick="registerNewCar()">Registrar Nuevo Auto</button>
+                <input type="text" placeholder="Buscar auto..." id="search-repuesto">
+                <button id="btn-buscar" onclick="searchPart()">Buscar</button>
+
+                <h3>Autos 0 km</h3>
+                <ul id="autos-nuevos">
+                    <li>
+                        <strong>Modelo:</strong> Toyota Corolla <br>
+                        <strong>Año:</strong> 2024 <br>
+                        <strong>Precio:</strong> $25,000 <br>
+                        <strong>Color:</strong> Blanco <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Toyota Corolla')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Modelo:</strong> Honda Civic <br>
+                        <strong>Año:</strong> 2024 <br>
+                        <strong>Precio:</strong> $27,000 <br>
+                        <strong>Color:</strong> Negro <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Honda Civic')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Modelo:</strong> Ford Fiesta <br>
+                        <strong>Año:</strong> 2023 <br>
+                        <strong>Precio:</strong> $12,000 <br>
+                        <strong>Color:</strong> Rojo <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Ford Fiesta')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Modelo:</strong> Chevrolet Onix <br>
+                        <strong>Año:</strong> 2025 <br>
+                        <strong>Precio:</strong> $11,500 <br>
+                        <strong>Color:</strong> Azul <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Chevrolet Onix')">Editar</button>
+                    </li>
+                </ul>
+
+                <h3>Autos de Segunda Mano</h3>
+                <ul id="autos-segunda-mano">
+                    <li>
+                        <strong>Modelo:</strong> Ford Fiesta <br>
+                        <strong>Año:</strong> 2018 <br>
+                        <strong>Precio:</strong> $12,000 <br>
+                        <strong>Color:</strong> Rojo <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Ford Fiesta')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Modelo:</strong> Chevrolet Onix <br>
+                        <strong>Año:</strong> 2019 <br>
+                        <strong>Precio:</strong> $11,500 <br>
+                        <strong>Color:</strong> Azul <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Chevrolet Onix')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Modelo:</strong> Toyota Corolla <br>
+                        <strong>Año:</strong> 2016 <br>
+                        <strong>Precio:</strong> $25,000 <br>
+                        <strong>Color:</strong> Blanco <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Toyota Corolla')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Modelo:</strong> Honda Civic <br>
+                        <strong>Año:</strong> 2017 <br>
+                        <strong>Precio:</strong> $27,000 <br>
+                        <strong>Color:</strong> Negro <br>
+                        <strong>Chasis:</strong> 1HGBH41JXMN109186 <br>
+                        <button onclick="editCar('Honda Civic')">Editar</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="repuestos" class="section" style="display: none;">
+                <h2>Lista de Repuestos</h2>
+                <div class="search-area">
+                    <input type="text" placeholder="Buscar repuesto..." id="search-repuesto">
+                    <button id="btn-buscar" onclick="searchPart()">Buscar</button>
+                    <button id="btn-registrar" onclick="registerNewPart()">Registrar Repuesto</button>
+                </div>
+                <ul id="lista-repuestos">
+                    <li>
+                        <strong>Nombre:</strong> Filtro de Aceite <br>
+                        <strong>Precio:</strong> $20 <br>
+                        <strong>Cantidad:</strong> 50 <br>
+                        <button onclick="editPart('Filtro de Aceite')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Nombre:</strong> Pastillas de Freno <br>
+                        <strong>Precio:</strong> $30 <br>
+                        <strong>Cantidad:</strong> 30 <br>
+                        <button onclick="editPart('Pastillas de Freno')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Nombre:</strong> Batería <br>
+                        <strong>Precio:</strong> $80 <br>
+                        <strong>Cantidad:</strong> 20 <br>
+                        <button onclick="editPart('Batería')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Nombre:</strong> Filtro de Aceite <br>
+                        <strong>Precio:</strong> $20 <br>
+                        <strong>Cantidad:</strong> 50 <br>
+                        <button onclick="editPart('Filtro de Aceite')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Nombre:</strong> Pastillas de Freno <br>
+                        <strong>Precio:</strong> $30 <br>
+                        <strong>Cantidad:</strong> 30 <br>
+                        <button onclick="editPart('Pastillas de Freno')">Editar</button>
+                    </li>
+                    <li>
+                        <strong>Nombre:</strong> Batería <br>
+                        <strong>Precio:</strong> $80 <br>
+                        <strong>Cantidad:</strong> 20 <br>
+                        <button onclick="editPart('Batería')">Editar</button>
+                    </li>
+
+
+                </ul>
+            </div>
+
+            <div id="registroAuto" class="section" style="display: none;">
+                <h2>Registrar Nuevo Auto</h2>
+                <form id="newCarForm" onsubmit="submitForm(event)">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" required><br>
+
+                    <label for="anio">Año:</label>
+                    <input type="number" id="anio" required><br>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" required><br>
+
+                    <label for="color">Color:</label>
+                    <input type="text" id="color" required><br>
+
+                    <button type="submit">Registrar</button>
+                    <button type="button" onclick="cancelRegistration()">Cancelar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(el => el.style.display = 'none');
+            document.getElementById(section).style.display = 'block';
+            if (section === 'registroAuto') {
+                document.getElementById('newCarForm').reset(); // Reiniciar formulario
+            }
+        }
+
+        document.getElementById('verPerfil').addEventListener('click', function () {
+            alert('Ver Perfil seleccionado');
+        });
+
+        document.getElementById('editarPerfil').addEventListener('click', function () {
+            alert('Editar Perfil seleccionado');
+        });
+
+        document.getElementById('cerrarSesion').addEventListener('click', function () {
+            alert('Cerrar Sesión seleccionado');
+        });
+
+        const profileMenu = document.getElementById('profileMenu');
+        const profileDropdown = document.getElementById('profileDropdown');
+
+        profileMenu.addEventListener('click', function () {
+            profileDropdown.style.display = profileDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!profileMenu.contains(event.target)) {
+                profileDropdown.style.display = 'none';
+            }
+        });
+
+        function registerNewCar() {
+            showSection('registroAuto');
+        }
+
+        function searchCar() {
+            alert('Función para buscar un auto.');
+            // Aquí puedes agregar el código para abrir un formulario de búsqueda
+        }
+
+        function editCar(carModel) {
+            alert('Función para editar el auto: ' + carModel);
+            // Aquí puedes agregar el código para editar la información del auto
+        }
+
+        function submitForm(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+            alert('Nuevo auto registrado: ' + document.getElementById('modelo').value);
+            showSection('autos'); // Regresar a la lista de autos
+        }
+
+        function cancelRegistration() {
+            showSection('autos'); // Regresar a la lista de autos sin registrar
+        }
+    </script>
+</body>
+
+</html>

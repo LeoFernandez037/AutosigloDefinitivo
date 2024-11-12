@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Fondo blanco */
+}
+
+header {
+    background-color: #FF6060; /* Color de fondo del encabezado */
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s; /* Agregar transición suave */
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Cambiar el color en hover */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilos del menú desplegable del perfil */
+.profile-menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-menu span {
+    margin-right: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.profile-menu .arrow-down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    margin-left: 5px;
+}
+
+.profile-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px; /* Cambiado para alinearse mejor con el perfil */
+    right: 0;
+    background-color: white;
+    color: black;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    z-index: 1000;
+    transition: opacity 0.3s ease; /* Transición suave para mostrar/ocultar */
+}
+
+/* Al mostrar el dropdown, cambiar la opacidad */
+.profile-menu .dropdown.show {
+    display: block;
+    opacity: 1; /* Asegurarse de que sea visible */
+}
+
+.profile-menu .dropdown li {
+    margin-bottom: 10px;
+}
+
+.profile-menu .dropdown li a {
+    color: black;
+    text-decoration: none;
+    padding: 8px 15px; /* Padding para mejorar la usabilidad */
+    transition: background-color 0.3s; /* Transición suave para hover */
+}
+
+.profile-menu .dropdown li a:hover {
+    background-color: #f0f0f0; /* Fondo claro en hover */
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+    background-color: #1B232C; /* Color de fondo de la barra lateral */
+    padding: 20px;
+    color: white;
+    height: 100vh;
+    width: 220px; /* Ajuste de ancho */
+    position: fixed;
+    top: 60px; /* Espacio bajo la cabecera */
+    left: 0;
+    z-index: 999;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    padding: 10px; /* Agregar padding para mejorar la usabilidad */
+    transition: background-color 0.3s, padding-left 0.3s; /* Transición suave */
+}
+
+.sidebar ul li a:hover {
+    background-color: #FF6060; /* Color de hover */
+    padding-left: 15px; /* Aumentar padding al pasar el mouse */
+}
+
+main {
+    margin-left: 220px;
+    padding: 20px;
+    padding-top: 80px; /* Espacio para el encabezado */
+}
+
+.section {
+    margin-top: 20px;
+}
+
+h2, h3 {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #FF6060; /* Color de los botones */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #d45555; /* Color al pasar el mouse sobre los botones */
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
