@@ -7,8 +7,6 @@
                 <li>Inicio</li>
                 <li>Nosotros</li>
                 <li>Contáctenos</li>
-                <li>Cotizar</li>
-                <li>Donale</li>
             </ul>
         </div>
         <div class="footer-section">

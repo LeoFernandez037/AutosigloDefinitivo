@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: empleado.php?id=".urlencode($_SESSION['id_usuario'])); // Asegúrate de redirigir correctamente
                 break;
             case 5: // Administrador
-                header("Location: landadmin.html");
+                header("Location: admi.php?id=".urlencode($_SESSION['id_usuario'])); 
                 break;
             default:
                 header("Location: index.php");
