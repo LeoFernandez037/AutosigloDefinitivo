@@ -11,13 +11,26 @@
 </head>
 
 <body>
-    <h1>IMPORTADORA</h1>
-    <h2>AUTOSIGLO</h2>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="logotipo" src="./imagenes/logo.png" alt="AUTOSIGLO logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.php">Inicio</a>
+                <a href="equipo.php">Empleados</a>
+                <a href="contacto.php">Contacto</a>
+                <a href="login.php" class="ingresar">Ingresar</a>
+            </div>
+        </nav>
+    </header>
+
     <div class="login-container">
-        <a href="index.php" class="icon-link">
-            <img src="./Imagenes/atras.png" alt="Salir" class="icon-image">
-        </a>
         <div class="login-box">
+            <a href="index.php" class="icon-link">
+                <img src="./Imagenes/atras.png" alt="Salir" class="icon-image">
+            </a>
             <h3>Inicio de sesión</h3>
             <p>Bienvenido de nuevo</p>
             <?php
@@ -37,6 +50,7 @@
     </div>
     <img src="./Imagenes/1.png" alt="Auto" class="auto_derecha">
     <img src="./Imagenes/2.png" alt="Auto2" class="auto_izquierda">
+    
 </body>
-
+<?php include('footer.php') ?>
 </html>

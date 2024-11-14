@@ -11,6 +11,7 @@ header {
     padding: 0rem;
     position: sticky;
     top: 0px;
+    z-index: 100;
 }
 
 nav {
@@ -111,14 +112,28 @@ a {
 }
 
 .car-section {
-    padding: 2rem;
+    width: 95%;
+    margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 50px;
+    position: relative;
+    overflow: hidden;
 }
+
+.car-section2 {
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 50px
+}
+
 
 .car-carousel {
     display: flex;
     gap: 1rem;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    transition: transform 0.3s ease-out;
 }
 
 .car-card {
@@ -127,7 +142,96 @@ a {
     border: 1px solid #dee2e6;
     border-radius: 4px;
     overflow: hidden;
-    scroll-snap-align: center;
+}
+
+.car-card2 {
+    flex: 0 0 auto;
+    width: 300px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.car-carousel2 {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease-out;
+}
+
+.boton-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(220, 53, 69, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.boton-carrusel:hover {
+    background-color: rgba(220, 53, 69, 0.8);
+}
+
+.boton-anterior {
+    left: 10px;
+}
+
+.boton-siguiente {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .car-section {
+        max-width: 320px;
+    }
+
+    .boton-carrusel {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+}
+
+.boton-carrusel2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(220, 53, 69, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.boton-carrusel2:hover {
+    background-color: rgba(220, 53, 69, 0.8);
+}
+
+.boton-anterior2 {
+    left: 10px;
+}
+
+.boton-siguiente2 {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .car-section2 {
+        max-width: 320px;
+    }
+
+    .boton-carrusel2 {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
 }
 
 .car-card img {

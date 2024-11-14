@@ -24,13 +24,13 @@
 
         <section class="car-section">
             <h2>Autos a medio uso</h2>
-            <div class="car-carousel">
+            <div class="car-carousel" id="car-carousel">
                 <form action=""></form>
                 <?php
                 $query = "SELECT auto.ID_AUTO, auto.NOMBRE, auto.PRECIO, foto_auto.FOTOGRAFIA FROM auto JOIN foto_auto WHERE auto.ID_AUTO = foto_auto.ID_AUTO";
                 $resultado = mysqli_query($conn, $query);
                 while ($row = mysqli_fetch_array($resultado)) { ?>
-                    <div class="car-card">
+                    <div class="car-card" id="car-card">
                         <a href="cotizacion.php?id=<?php echo $row['ID_AUTO'] ?>" class="webada">
                             <img src="<?php echo $row['FOTOGRAFIA'] ?>" alt="Suzuki Alto">
                             <div class="car-info">
@@ -41,6 +41,9 @@
                     </div>
                 <?php } ?>
             </div>
+            <button class="boton-carrusel boton-anterior" id="botonAnterior" aria-label="Anterior imagen">&lt;</button>
+            <button class="boton-carrusel boton-siguiente" id="botonSiguiente"
+                aria-label="Siguiente imagen">&gt;</button>
         </section>
 
         <section class="features">
@@ -54,14 +57,14 @@
             </div>
         </section>
 
-        <section class="car-section">
+        <section class="car-section2">
             <h2>Autos 0-KM</h2>
-            <div class="car-carousel">
+            <div class="car-carousel2" id="car-carousel2">
                 <?php
                 $query = "SELECT auto.ID_AUTO, auto.NOMBRE, auto.PRECIO, foto_auto.FOTOGRAFIA FROM auto JOIN foto_auto WHERE auto.ID_AUTO = foto_auto.ID_AUTO";
                 $resultado = mysqli_query($conn, $query);
                 while ($row = mysqli_fetch_array($resultado)) { ?>
-                    <div class="car-card">
+                    <div class="car-card" id="car-card2">
                         <a href="cotizacion.php?id=<?php echo $row['ID_AUTO'] ?>" class="webada">
                             <img src="<?php echo $row['FOTOGRAFIA'] ?>" alt="Suzuki Alto">
                             <div class="car-info">
@@ -72,6 +75,10 @@
                     </div>
                 <?php } ?>
             </div>
+            <button class="boton-carrusel2 boton-anterior2" id="botonAnterior2"
+                aria-label="Anterior imagen">&lt;</button>
+            <button class="boton-carrusel2 boton-siguiente2" id="botonSiguiente2"
+                aria-label="Siguiente imagen">&gt;</button>
         </section>
 
         <section class="payment-types">
@@ -101,8 +108,6 @@
                     <li>Inicio</li>
                     <li>Nosotros</li>
                     <li>Contáctenos</li>
-                    <li>Cotizar</li>
-                    <li>Donale</li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -136,6 +141,68 @@
             <p>AUTOSIGLO</p>
         </div>
     </footer>
+    <script>
+        const carrusel = document.getElementById('car-carousel');
+        const tarjetas = carrusel.querySelectorAll('#car-card');
+        const botonAnterior = document.getElementById('botonAnterior');
+        const botonSiguiente = document.getElementById('botonSiguiente');
+        let currentIndex = 0;
+        const totalTarjetas = tarjetas.length;
+
+        const carrusel2 = document.getElementById('car-carousel2');
+        const tarjetas2 = carrusel2.querySelectorAll('#car-card2');
+        const botonAnterior2 = document.getElementById('botonAnterior2');
+        const botonSiguiente2 = document.getElementById('botonSiguiente2');
+        let currentIndex2 = 0;
+        const totalTarjetas2 = tarjetas2.length;
+
+        function moverCarrusel(direccion) {
+            currentIndex = (currentIndex + direccion + totalTarjetas) % totalTarjetas;
+            actualizarCarrusel();
+        }
+        function moverCarrusel2(direccion2) {
+            currentIndex2 = (currentIndex2 + direccion2 + totalTarjetas2) % totalTarjetas2;
+            actualizarCarrusel2();
+        }
+
+        function actualizarCarrusel() {
+            const desplazamiento = -currentIndex * 320; // 300px de ancho + 20px de margen
+            carrusel.style.transform = `translateX(${desplazamiento}px)`;
+        }
+        function actualizarCarrusel2() {
+            const desplazamiento2 = -currentIndex2 * 320; // 300px de ancho + 20px de margen
+            carrusel2.style.transform = `translateX(${desplazamiento2}px)`;
+        }
+
+        botonAnterior.addEventListener('click', () => moverCarrusel(-1));
+        botonSiguiente.addEventListener('click', () => moverCarrusel(1));
+        botonAnterior2.addEventListener('click', () => moverCarrusel2(-1));
+        botonSiguiente2.addEventListener('click', () => moverCarrusel2(1));
+
+        // Manejar teclas de flecha izquierda y derecha
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moverCarrusel(-1);
+            } else if (e.key === 'ArrowRight') {
+                moverCarrusel(1);
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moverCarrusel2(-1);
+            } else if (e.key === 'ArrowRight') {
+                moverCarrusel2(1);
+            }
+        });
+
+        // Ajustar el carrusel al cambiar el tamaño de la ventana
+        window.addEventListener('resize', actualizarCarrusel);
+        window.addEventListener('resize', actualizarCarrusel2);
+
+        // Inicializar el carrusel
+        actualizarCarrusel();
+        actualizarCarrusel2();
+    </script>
 </body>
 
 </html>

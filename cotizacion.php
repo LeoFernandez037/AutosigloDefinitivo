@@ -20,18 +20,16 @@ if (isset($_GET['id'])) {
     <header>
         <nav>
             <div class="logo">
-                <img src="./imagenes/LOGO.png" alt="AUTOSIGLO logo">
-                SOFTWHEELS
+                <img class="logotipo" src="./imagenes/logo.png" alt="AUTOSIGLO logo">
             </div>
             <div class="nav-links">
                 <a href="index.php">Inicio</a>
                 <a href="equipo.php">Empleados</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="contacto.php">Contacto</a>
                 <a href="login.php" class="ingresar">Ingresar</a>
             </div>
         </nav>
     </header>
-
     <main>
         <div class="car-details">
             <div class="car-image">
@@ -78,8 +76,6 @@ if (isset($_GET['id'])) {
                     <li>Inicio</li>
                     <li>Nosotros</li>
                     <li>Contáctenos</li>
-                    <li>Cotizar</li>
-                    <li>Donale</li>
                 </ul>
             </div>
             <div class="footer-section">

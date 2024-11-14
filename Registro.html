@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="./Css/RegistroCli.css">
+    <link rel="stylesheet" href="./cssPrincipal/RegistroCli.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <script>
@@ -24,13 +24,24 @@
 </head>
 
 <body>
-    <img src="./Imagenes/LO.png" alt="LOGO2" class="Logo">
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="logotipo" src="./imagenes/logo.png" alt="AUTOSIGLO logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.php">Inicio</a>
+                <a href="equipo.php">Empleados</a>
+                <a href="contacto.php">Contacto</a>
+                <a href="login.php" class="ingresar">Ingresar</a>
+            </div>
+        </nav>
+    </header>
     <div class="login-container">
-
-        <a href="index.php" class="icon-link">
-            <img src="./Imagenes/atras.png" alt="Salir" class="icon-image">
-        </a>
         <div class="login-box">
+            <a href="index.php" class="icon-link">
+                <img src="./Imagenes/atras.png" alt="Salir" class="icon-image">
+            </a>
             <h3>Registro</h3>
             <p>Bienvenido, por favor llene los siguientes campos:</p>
             <form action="Registro.php" method="POST">
@@ -66,5 +77,46 @@
     <img src="./Imagenes/1.png" alt="Auto" class="auto_derecha">
     <img src="./Imagenes/2.png" alt="Auto2" class="auto_izquierda">
 </body>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>NAVEGACION</h3>
+            <ul>
+                <li>Inicio</li>
+                <li>Nosotros</li>
+                <li>Contáctenos</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>HORARIOS</h3>
+            <ul>
+                <li>Lunes a Viernes: 9:00 AM - 6:00 PM</li>
+                <li>Sábados: 9:00 AM - 2:00 PM</li>
+                <li>Domingos: Cerrado</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>LEGAL</h3>
+            <ul>
+                <li>Info General</li>
+                <li>Términos de servicio</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>CONTÁCTANOS</h3>
+            <ul>
+                <li>Dirección: Av. Revolución 1234</li>
+                <li>Col. Moderna, 12345</li>
+                <li>Ciudad de Baja, Baja</li>
+                <li>Teléfono: +52 (55) 1234 5678</li>
+                <li>Email: info@autosiglo.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-for" style="text-align: center; margin-top: 2rem;">
+        <p>© 2024 Los pipoquitas. Todos los derechos reservados.</p>
+        <p>AUTOSIGLO</p>
+    </div>
+</footer>
 
 </html>

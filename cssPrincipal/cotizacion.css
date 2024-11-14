@@ -9,7 +9,10 @@ html {
 header {
     background-color: #1c2331;
     color: white;
-    padding: 1rem;
+    padding: 0rem;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
 }
 
 nav {
@@ -17,6 +20,21 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
+
+a {
+    font-size: x-large;
+}
+
+
+.nav-links {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 700px;
+}
+
 
 .logo {
     display: flex;
@@ -26,20 +44,22 @@ nav {
 }
 
 .logo img {
-    width: 30px;
-    margin-right: 10px;
+    width: 450px;
+    height: 120px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     margin-left: 1rem;
+    margin-top: 8px;
 }
 
 .nav-links .ingresar {
     background-color: #dc3545;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    margin: 0px;
 }
 
 .car-details {

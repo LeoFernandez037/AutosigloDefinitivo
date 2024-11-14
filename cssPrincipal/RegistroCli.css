@@ -1,15 +1,73 @@
 body {
     background: #ffffff;
-    height: 1024px;
-    width: 1440px;
+    margin: 0px;
+}
+
+header {
+    background-color: #1c2331;
+    color: white;
+    padding: 0rem;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+a {
+    font-size: x-large;
+}
+
+.nav-links {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 700px;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    margin-top: 8px;
+}
+
+.nav-links .ingresar {
+    background-color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    width: 450px;
+    height: 120px;
+
 }
 
 .icon-image {
     position: absolute;
+    padding-top: 20px;
     width: 50px;
     top: 5px;
     left: 30px;
-    z-index: 1;
+    z-index: 100;
     margin: 40px -10;
 }
 
@@ -39,10 +97,9 @@ body {
 }
 
 .login-container {
-    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 20px;
 }
 
 h3 {
@@ -62,7 +119,7 @@ p {
 .login-box {
     background-color: #ffffff80;
     border-radius: 10px;
-    border-color: #FF6060;
+    border-color: #E60D22;
     border-width: 10px;
     border-style: solid;
     text-align: center;
@@ -113,11 +170,11 @@ p {
 }
 
 .login-box input::placeholder {
-    color: #FF6060;
+    color: #E60D22;
 }
 
 .login-box button {
-    background-color: #FF6060;
+    background-color: #E60D22;
     color: #ffffff;
     padding: 10px;
     border: none;
@@ -136,7 +193,63 @@ p {
 
 .contraseñaGenerada {
     font-family: 'Poppins', sans-serif;
-    color: #FF6060;
+    color: #E60D22;
     margin: 10px;
     margin-bottom: 30px;
+}
+
+
+footer {
+    background-color: #1c2331;
+    color: white;
+    margin-top: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: large;
+    color: #ffffff;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-for {
+    background-color: #b71c1c;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+.footer-for p {
+    color: #ffffff;
+}
+
+.footer-for::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #b71c1c;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 80% 50%, 60% 0, 40% 50%, 20% 0, 0 50%);
 }
