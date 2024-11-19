@@ -182,13 +182,13 @@ h6 {
 
 .tarjetaprofile {
     display: flex;
-    width: 500px;
-    height: 600px;
+    width: 800px;
+    height: 430px;
     justify-content: center;
     margin-top: 20px;
-    background-color: rgb(70, 70, 70);
+    background-color: #1B232C;
     border-radius: 25px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -207,7 +207,7 @@ h6 {
 }
 
 .btn_actualizar {
-    background-color: #FF6060;
+    background-color: #b71c1c;
     border-radius: 10px;
     width: 130px;
     margin-top: 20px;
@@ -228,4 +228,20 @@ h6 {
 
 .container-fluid {
     height: 450px;
+}
+
+.col-md-8 {
+    margin-bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 449px;
+    white-space: nowrap;
+}
+
+.boton-imprimir {
+    width: auto;
+    height: auto;
+    background-color: #b71c1c;
+    margin-left: 20px;
+    border-radius: 5px;
 }

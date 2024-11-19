@@ -12,16 +12,41 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="empleado.php?id=<?php echo $id?>" class="sidebar-link">
+                    <a href="admi.php?id=<?php echo $id?>" class="sidebar-link">
                         <!-- <i class="lni lni-user"></i>  -->
                         <img src="./home.png" alt="">
                         <span>Inicio</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <!-- <i class="lni lni-producthunt"></i> -->
+                        <img src="./inv.png" alt="">
+                        <span>Informes</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="informeclientesadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Clientes</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Vehiculos</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Ventas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
                     <a href="clientesadmin.php?id=<?php echo $id?>" class="sidebar-link">
                         <i class="lni lni-users"></i>
                         <span>Clientes</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="empleadosadmin.php?id=<?php echo $id?>" class="sidebar-link">
+                        <i class="lni lni-users"></i>
+                        <span>Empleados</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -33,22 +58,21 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="autosadmin.php?id=<?php echo $id?>" class="sidebar-link">Autos</a>
+                            <a href="autosadmin.php?id=<?php echo $id?>" class="sidebar-link">• Autos</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="repuestosadmin.php?id=<?php echo $id?>" class="sidebar-link">Repuestos</a>
+                            <a href="repuestosadmin.php?id=<?php echo $id?>" class="sidebar-link">• Repuestos</a>
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item">
-                    <a href="nuevaVenta.php?id=<?php echo $id?>" class="sidebar-link">
-                        <!-- <i class="lni lni-cart"></i> -->
+                <!-- <li class="sidebar-item">
+                    <a href="Ventas.php?id=<?php echo $id?>" class="sidebar-link">
                         <img src="./pen.png" alt="">
-                        <span>Nueva Venta</span>
+                        <span>Ventas</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="sidebar-item">
-                    <a href="perfil.php?id=<?php echo $id?>" class="sidebar-link">
+                    <a href="perfiladmin.php?id=<?php echo $id?>" class="sidebar-link">
                         <!-- <i class="lni lni-delivery"></i> -->
                         <img src="./prof.png" alt="">
                         <span>Perfil</span>

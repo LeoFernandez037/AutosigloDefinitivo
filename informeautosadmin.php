@@ -26,7 +26,8 @@ $id = $_GET['id'];
         <?php include 'sidebaradmin.php'; ?>
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom">
-                <h2>Autos</h2>
+                <h2>Informe Autos</h2>
+                <button class="boton-imprimir" onclick="printDiv('printableArea')">Imprimir Informe</button>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
@@ -44,7 +45,7 @@ $id = $_GET['id'];
                     </ul>
                 </div>
             </nav>
-            <div class="col-md-8">
+            <div class="col-md-8"  id = "printableArea">
                     <table class="table table-bordered">
                         <thead>
                             <th>Nombre</th>
@@ -78,6 +79,7 @@ $id = $_GET['id'];
                 </div> 
                 <?php include('footer2.php') ?>
         </div>
+        <script> function printDiv(divId) { var content = document.getElementById(divId).innerHTML; var myWindow = window.open('', '', 'width=800,height=600'); myWindow.document.write('<html><head><title>Print</title>'); myWindow.document.write('</head><body>'); myWindow.document.write(content); myWindow.document.write('</body></html>'); myWindow.document.close(); myWindow.print(); } </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>

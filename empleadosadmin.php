@@ -22,7 +22,7 @@
         <?php include 'sidebaradmin.php'; ?>
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom">
-                <h2>Clientes</h2>
+                <h2>Empleados</h2>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
@@ -48,7 +48,6 @@
                         <th>Email</th>
                         <th>Teléfono</th>
                         <th>CI</th>
-                        <th>Acciones</th>
                     </thead>
                     <tbody>
                         <?php  
@@ -61,22 +60,18 @@
                                     <td><?php echo $row['CORREO_ELECTRONICO']; ?></td>
                                     <td><?php echo $row['TELEFONO']; ?></td>
                                     <td><?php echo $row['CI']; ?></td>
-                                    <td>
-                                        <a href="#" class="btn btn-success btn-sm">Ver</a>
-                                        <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                                    </td>
                                 </tr>
-                            <?php } ?>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
             <?php include('footer2.php') ?>
         </div>
+    
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

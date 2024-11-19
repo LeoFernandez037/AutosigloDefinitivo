@@ -25,7 +25,7 @@
         echo $row['nombre'];
     ?> -->
     <div class="wrapper">
-        <?php include 'sidebar.php'; ?>
+        <?php include 'sidebaradmin.php'; ?>
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom">
                 <h2>Inicio</h2>
@@ -57,7 +57,7 @@
                             <div class="card-body p-0 d-flex flex-fill">
                                 <div class="row g-0 w-100">
                                     <div class="p-3 m-1">
-                                        <h4>Bienvenido Administrador<?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
+                                        <h4>Bienvenido Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
         $result = mysqli_query($conn, $query);
         $row = $result->fetch_assoc();
         echo $row['NOMBRES']; ?></h4>
@@ -97,7 +97,7 @@
                 </div>
                 
             </div>
-            <?php include('footer.php') ?>
+            <?php include('footer2.php') ?>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
