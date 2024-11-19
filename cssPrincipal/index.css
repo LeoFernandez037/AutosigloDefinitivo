@@ -64,7 +64,8 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    background-color: #f8f9fa;
+    background-color: #dc3545;
+    color: white;
 }
 
 .hero-text {
@@ -72,11 +73,12 @@ a {
 }
 
 .hero-text h1 {
-    font-size: 55px;
+    font-size: 80px;
+    text-align: center;
 }
 
 .hero-text p {
-    font-size: 25px;
+    font-size: 40px;
 }
 
 .hero-image {
@@ -111,22 +113,135 @@ a {
     color: #6c757d;
 }
 
+
+.fondo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 450px;
+    background-color: black;
+}
+
+.title-car-section {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: black;
+    border-bottom-color: black;
+    border-width: 25px;
+    border-radius: 15px;
+}
+
+.car-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marca1 {
+    position: relative;
+    left: 700px;
+    top: -50px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.marca1 img {
+    width: 120px;
+}
+
+.marca2 {
+    position: relative;
+    left: 1020px;
+    top: -120px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.marca2 img {
+    width: 70px;
+}
+
+.marca3 {
+    position: relative;
+    left: 1200px;
+    top: -300px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.marca3 img {
+    width: 150px;
+}
+
+.marca4 {
+    position: relative;
+    left: 430px;
+    top: -460px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.marca4 img {
+    width: 150px;
+}
+
+.marca5 {
+    position: relative;
+    left: 700px;
+    top: -660px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.marca5 img {
+    width: 100px;
+}
+
+.marca6 {
+    position: relative;
+    left: 1020px;
+    top: -710px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.marca6 img {
+    width: 70px;
+}
+
+.car-title h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
 .car-section {
-    width: 95%;
+    width: 100%;
+    max-width: 1815px;
     margin: 0 auto;
-    margin-left: 40px;
+    margin-left: 24px;
     margin-right: 50px;
     position: relative;
     overflow: hidden;
 }
 
 .car-section2 {
-    width: 95%;
+    width: 100%;
+    max-width: 1815px;
     margin: 0 auto;
+    margin-left: 24px;
+    margin-right: 50px;
     overflow: hidden;
     position: relative;
-    margin-left: 40px;
-    margin-right: 50px
+    /* margin-left: 40px;
+    margin-right: 50px */
 }
 
 
@@ -134,22 +249,27 @@ a {
     display: flex;
     gap: 1rem;
     transition: transform 0.3s ease-out;
+    width: 1000px;
 }
 
 .car-card {
-    flex: 0 0 auto;
+    flex: none;
     width: 300px;
     border: 1px solid #dee2e6;
     border-radius: 4px;
     overflow: hidden;
+    background: linear-gradient(to right, rgb(28, 35, 49), rgb(220, 53, 69));
+    border-radius: 15px;
 }
 
 .car-card2 {
-    flex: 0 0 auto;
+    flex: none;
     width: 300px;
     border: 1px solid #dee2e6;
     border-radius: 4px;
     overflow: hidden;
+    background: linear-gradient(to right, rgb(28, 35, 49), rgb(220, 53, 69));
+    border-radius: 15px;
 }
 
 .car-carousel2 {
@@ -161,7 +281,7 @@ a {
 .boton-carrusel {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(120px);
     background-color: rgba(220, 53, 69, 0.5);
     color: white;
     border: none;
@@ -199,7 +319,7 @@ a {
 .boton-carrusel2 {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(120px);
     background-color: rgba(220, 53, 69, 0.5);
     color: white;
     border: none;
@@ -234,6 +354,15 @@ a {
     }
 }
 
+.autofot {
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
 .car-card img {
     width: 100%;
     height: 200px;
@@ -242,6 +371,11 @@ a {
 
 .car-info {
     padding: 1rem;
+    display: flex;
+    color: white;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .features {
@@ -307,15 +441,34 @@ footer {
 }
 
 .payment-types {
-    padding: 2rem;
     background-color: #f8f9fa;
 }
 
+.title-payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/imagenes/FondoDinero.png);
+    width: 100%;
+    height: 250px;
+}
+
+.title-payment h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
 .payment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    background: rgb(28, 35, 49);
+    width: 100%;
+    height: fit-content;
 }
 
 .payment-card {
@@ -326,7 +479,7 @@ footer {
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: 600px;
+    width: 450px;
     height: 150px;
     justify-content: center;
     align-items: center;
@@ -361,7 +514,21 @@ footer {
     width: 30px;
 }
 
+.boton-informacion {
+    color: white;
+    background-color: rgba(220, 53, 69, 0.5);
+    border: none;
+    width: 50%;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+}
 
+.boton-informacion:hover {
+    background-color: rgba(220, 53, 69, 0.8);
+}
 
 footer {
     background-color: #1c2331;

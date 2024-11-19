@@ -31,6 +31,29 @@ if (isset($_GET['id'])) {
         </nav>
     </header>
     <main>
+        <div class="title-car-section">
+            <div class="car-title">
+                <h2>DETALLES</h2>
+            </div>
+            <div class="marca1">
+                <img src="./imagenes/AudiLogo.png" alt="AudiLogo">
+            </div>
+            <div class="marca2">
+                <img src="./imagenes/BenzLogo.png" alt="BenzLogo">
+            </div>
+            <div class="marca3">
+                <img src="./imagenes/BMWLogo.png" alt="BWMLogo">
+            </div>
+            <div class="marca4">
+                <img src="./imagenes/VolswoganLogo.png" alt="VolswoganLogo">
+            </div>
+            <div class="marca5">
+                <img src="./imagenes/HyundaiLogo.png" alt="HyundayLogo">
+            </div>
+            <div class="marca6">
+                <img src="./imagenes/SuzukiLogo.png" alt="Suzuki">
+            </div>
+        </div>
         <div class="car-details">
             <div class="car-image">
                 <img src="<?php echo $row['FOTOGRAFIA']; ?>" alt="<?php echo $row['NOMBRE']; ?>">

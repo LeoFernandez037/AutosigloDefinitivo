@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autosiglo</title>
     <link rel="stylesheet" href="./cssPrincipal/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +25,29 @@
         </section>
 
         <section class="car-section">
-            <h2>Autos a medio uso</h2>
+            <div class="title-car-section">
+                <div class="car-title">
+                    <h2>AUTOS "O KM"</h2>
+                </div>
+                <div class="marca1">
+                    <img src="./imagenes/AudiLogo.png" alt="AudiLogo">
+                </div>
+                <div class="marca2">
+                    <img src="./imagenes/BenzLogo.png" alt="BenzLogo">
+                </div>
+                <div class="marca3">
+                    <img src="./imagenes/BMWLogo.png" alt="BWMLogo">
+                </div>
+                <div class="marca4">
+                    <img src="./imagenes/VolswoganLogo.png" alt="VolswoganLogo">
+                </div>
+                <div class="marca5">
+                    <img src="./imagenes/HyundaiLogo.png" alt="HyundayLogo">
+                </div>
+                <div class="marca6">
+                    <img src="./imagenes/SuzukiLogo.png" alt="Suzuki">
+                </div>
+            </div>
             <div class="car-carousel" id="car-carousel">
                 <form action=""></form>
                 <?php
@@ -32,10 +56,17 @@
                 while ($row = mysqli_fetch_array($resultado)) { ?>
                     <div class="car-card" id="car-card">
                         <a href="cotizacion.php?id=<?php echo $row['ID_AUTO'] ?>" class="webada">
-                            <img src="<?php echo $row['FOTOGRAFIA'] ?>" alt="Suzuki Alto">
-                            <div class="car-info">
+                           <div class="car-info">
                                 <h3><?php echo $row['NOMBRE'] ?></h3>
-                                <p>$<?php echo $row['PRECIO'] ?></p>
+                            </div>
+                            <div class="autofot">
+                                <img src="<?php echo $row['FOTOGRAFIA'] ?>" alt="Suzuki Alto">
+                            </div>
+                            <div class="car-info">
+                                <p>Precio: <?php echo $row['PRECIO'] ?>$</p>
+                            </div>
+                            <div class="car-info">
+                                <button type="submit" class="boton-informacion">Más Información</button>
                             </div>
                         </a>
                     </div>
@@ -58,7 +89,29 @@
         </section>
 
         <section class="car-section2">
-            <h2>Autos 0-KM</h2>
+            <div class="title-car-section">
+                <div class="car-title">
+                    <h2>AUTOS "USADOS"</h2>
+                </div>
+                <div class="marca1">
+                    <img src="./imagenes/AudiLogo.png" alt="AudiLogo">
+                </div>
+                <div class="marca2">
+                    <img src="./imagenes/BenzLogo.png" alt="BenzLogo">
+                </div>
+                <div class="marca3">
+                    <img src="./imagenes/BMWLogo.png" alt="BWMLogo">
+                </div>
+                <div class="marca4">
+                    <img src="./imagenes/VolswoganLogo.png" alt="VolswoganLogo">
+                </div>
+                <div class="marca5">
+                    <img src="./imagenes/HyundaiLogo.png" alt="HyundayLogo">
+                </div>
+                <div class="marca6">
+                    <img src="./imagenes/SuzukiLogo.png" alt="Suzuki">
+                </div>
+            </div>
             <div class="car-carousel2" id="car-carousel2">
                 <?php
                 $query = "SELECT auto.ID_AUTO, auto.NOMBRE, auto.PRECIO, foto_auto.FOTOGRAFIA FROM auto JOIN foto_auto WHERE auto.ID_AUTO = foto_auto.ID_AUTO";
@@ -66,10 +119,17 @@
                 while ($row = mysqli_fetch_array($resultado)) { ?>
                     <div class="car-card" id="car-card2">
                         <a href="cotizacion.php?id=<?php echo $row['ID_AUTO'] ?>" class="webada">
-                            <img src="<?php echo $row['FOTOGRAFIA'] ?>" alt="Suzuki Alto">
-                            <div class="car-info">
+                           <div class="car-info">
                                 <h3><?php echo $row['NOMBRE'] ?></h3>
-                                <p>$<?php echo $row['PRECIO'] ?></p>
+                            </div>
+                            <div class="autofot">
+                                <img src="<?php echo $row['FOTOGRAFIA'] ?>" alt="Suzuki Alto">
+                            </div>
+                            <div class="car-info">
+                                <p>Precio: <?php echo $row['PRECIO'] ?>$</p>
+                            </div>
+                            <div class="car-info">
+                                <button type="submit" class="boton-informacion">Más Información</button>
                             </div>
                         </a>
                     </div>
@@ -82,7 +142,9 @@
         </section>
 
         <section class="payment-types">
-            <h2>Tipos de pago</h2>
+            <div class="title-payment">
+                <h2>Tipos de pago</h2>
+            </div>
             <div class="payment-grid">
                 <div class="payment-card">
                     <img src="./imagenes/dinero-en-efectivo.png" alt="Pago en efectivo">
@@ -91,10 +153,6 @@
                 <div class="payment-card">
                     <img src="./imagenes/tarjeta-de-debito.png" alt="Pago con tarjeta de crédito">
                     <h3>Tarjeta de crédito</h3>
-                </div>
-                <div class="payment-card">
-                    <img src="./imagenes/financiamiento.png" alt="Financiamiento">
-                    <h3>Financiamiento</h3>
                 </div>
             </div>
         </section>
