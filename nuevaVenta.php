@@ -45,7 +45,7 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container">
+            <div class="container_venta">
             <form action="save_venta.php?id=<?php echo $id?>" method="POST">
                 <div class="form-group">
                     <input type="text" name="tittle" class="form-control"
@@ -58,7 +58,7 @@
                 <input type="submit" class="btn btn-success btn-block" name="save-task" value="Guardar Venta">
             </form>
             </div>  
-           
+            <?php include('footer2.php') ?>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

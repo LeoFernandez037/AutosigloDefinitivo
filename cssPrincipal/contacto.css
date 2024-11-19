@@ -18,6 +18,9 @@ nav {
     align-items: center;
 }
 
+main {
+    display: flex;
+}
 
 a {
     font-size: x-large;
@@ -59,8 +62,8 @@ a {
     color: white;
     padding: 2rem;
     margin: 2rem auto;
-    max-width: 800px;
     border-radius: 8px;
+    min-width: 750px;
 }
 
 .contact-form h2 {
