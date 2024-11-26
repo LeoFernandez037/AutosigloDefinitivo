@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
+    <link rel="stylesheet" type = "text/css" href="dataTables/datatables.min.css" >
     <link rel="stylesheet" href="style.css">
     <title>Autos</title>
 </head>
@@ -45,12 +46,13 @@ $id = $_GET['id'];
                 </div>
             </nav>
             <div class="col-md-8">
-                    <table class="table table-bordered">
+                    <table id="autostableadmin" class="display">
                         <thead>
                             <th>Nombre</th>
                             <th>Precio</th>
                             <th>Numero Chasis</th>
                             <th>Traccion</th>
+                            <th>Acciones</th>
                         </thead>
                         <tbody>
                             <?php  
@@ -71,6 +73,10 @@ $id = $_GET['id'];
                                         <td>
                                             <?php echo $row['TRACCION'] ?>      
                                         </td>
+                                        <td>
+                                        <a href="#" class="btn btn-success btn-sm">Ver</a>
+                                        <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                         </tbody>
@@ -79,8 +85,21 @@ $id = $_GET['id'];
                 <?php include('footer2.php') ?>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src = "https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script>
+        // new DataTable('#example');
+        $(document).ready(function() {
+        $('#autostableadmin').DataTable({
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            }
+        });
+});
+    </script>
 </body>
 
 </html>

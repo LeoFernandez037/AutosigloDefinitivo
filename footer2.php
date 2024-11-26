@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./cssPrincipal/index.css">
 <footer class="footer2">
-    <div class="footer-content2">
+    <!-- <div class="footer-content2">
         <div class="footer-section2">
             <h4>HORARIOS</h4>
             <ul>
@@ -26,7 +26,7 @@
                 <li>Email: info@autosiglo.com</li>
             </ul>
         </div>
-    </div>
+    </div> -->
     <div class="footer-for2" style="text-align: center; margin-top: 2rem;">
         <p>© 2024 Los pipoquitas. Todos los derechos reservados.</p>
         <p>AUTOSIGLO</p>

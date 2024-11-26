@@ -31,6 +31,10 @@
                 <h2>Inicio</h2>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
+                    <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
+        $result = mysqli_query($conn, $query);
+        $row = $result->fetch_assoc();
+        echo $row['NOMBRES']; ?></h3>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA= $id";
@@ -94,8 +98,63 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="card flex-fill border-0 illustration">
+                            <div class="card-body p-0 d-flex flex-fill">
+                                <div class="row g-0 w-100">
+                                    <div class="p-3 m-1">
+                                        <h4>Ventas totales:    <?php $query = "SELECT COUNT(ID_RECIBO) AS 'Ventas Totales' FROM recibo;";
+        $result = mysqli_query($conn, $query);
+        $row = $result->fetch_assoc();
+        echo $row['Ventas Totales']; ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="card flex-fill border-0 illustration">
+                            <div class="card-body p-0 d-flex flex-fill">
+                                <div class="row g-0 w-100">
+                                    <div class="p-3 m-1">
+                                        <h4>Usuarios registrados:    <?php $query = "SELECT COUNT(ID_USUARIO) AS 'Clientes' FROM usuario WHERE ID_ROL='1';";
+        $result = mysqli_query($conn, $query);
+        $row = $result->fetch_assoc();
+        echo $row['Clientes']; ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="card flex-fill border-0 illustration">
+                            <div class="card-body p-0 d-flex flex-fill">
+                                <div class="row g-0 w-100">
+                                    <div class="p-3 m-1">
+                                        <h4>Vehiculos registrados:    <?php $query = "SELECT COUNT(ID_AUTO) AS 'Autos' FROM auto;";
+        $result = mysqli_query($conn, $query);
+        $row = $result->fetch_assoc();
+        echo $row['Autos']; ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex">
+                        <div class="card flex-fill border-0 illustration">
+                            <div class="card-body p-0 d-flex flex-fill">
+                                <div class="row g-0 w-100">
+                                    <div class="p-3 m-1">
+                                        <h4>Repuestos registrados:    <?php $query = "SELECT COUNT(ID_REPUESTO) AS 'Repuestos' FROM repuesto;";
+        $result = mysqli_query($conn, $query);
+        $row = $result->fetch_assoc();
+        echo $row['Repuestos']; ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
             </div>
             <?php include('footer2.php') ?>
         </div>

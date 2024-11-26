@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="./style.css">
 
 <aside id="sidebar">
             <div class="d-flex">
@@ -38,25 +38,51 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="clientesadmin.php?id=<?php echo $id?>" class="sidebar-link">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#authcli" aria-expanded="false" aria-controls="auth">
+                        <!-- <i class="lni lni-producthunt"></i> -->
                         <i class="lni lni-users"></i>
                         <span>Clientes</span>
                     </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="empleadosadmin.php?id=<?php echo $id?>" class="sidebar-link">
-                        <i class="lni lni-users"></i>
-                        <span>Empleados</span>
-                    </a>
+                    <ul id="authcli" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="clientesadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver lista clientes</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Editar clientes</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar clientes</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        data-bs-target="#authempl" aria-expanded="false" aria-controls="auth">
+                        <!-- <i class="lni lni-producthunt"></i> -->
+                        <i class="lni lni-users"></i>
+                        <span>Empleados</span>
+                    </a>
+                    <ul id="authempl" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="empleadosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver nomina</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Editar empleados</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar empleados</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#auth2" aria-expanded="false" aria-controls="auth">
                         <!-- <i class="lni lni-producthunt"></i> -->
                         <img src="./inv.png" alt="">
-                        <span>Inventario</span>
+                        <span>Inventario</span> 
                     </a>
-                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <ul id="auth2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
                             <a href="autosadmin.php?id=<?php echo $id?>" class="sidebar-link">• Autos</a>
                         </li>
@@ -65,12 +91,12 @@
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="Ventas.php?id=<?php echo $id?>" class="sidebar-link">
                         <img src="./pen.png" alt="">
                         <span>Ventas</span>
                     </a>
-                </li> -->
+                </li>
                 <li class="sidebar-item">
                     <a href="perfiladmin.php?id=<?php echo $id?>" class="sidebar-link">
                         <!-- <i class="lni lni-delivery"></i> -->
@@ -79,10 +105,4 @@
                     </a>
                 </li>
             </ul>
-            <div class="sidebar-footer">
-                <a href="index.php" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>Cerrar sesion</span>
-                </a>
-            </div>
         </aside>

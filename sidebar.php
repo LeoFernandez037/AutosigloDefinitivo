@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="./style.css">
 
 <aside id="sidebar">
             <div class="d-flex">
@@ -55,10 +55,4 @@
                     </a>
                 </li>
             </ul>
-            <div class="sidebar-footer">
-                <a href="index.php" class="sidebar-link">
-                    <i class="lni lni-exit"></i>
-                    <span>Cerrar sesion</span>
-                </a>
-            </div>
         </aside>

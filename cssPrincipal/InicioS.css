@@ -227,3 +227,7 @@ footer {
     background-color: #b71c1c;
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 80% 50%, 60% 0, 40% 50%, 20% 0, 0 50%);
 }
+
+nav {
+    height: 120px;
+}

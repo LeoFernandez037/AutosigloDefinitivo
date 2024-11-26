@@ -28,9 +28,9 @@
 
     <div class="login-container">
         <div class="login-box">
-            <a href="index.php" class="icon-link">
+            <!-- <a href="index.php" class="icon-link">
                 <img src="./Imagenes/atras.png" alt="Salir" class="icon-image">
-            </a>
+            </a> -->
             <h3>Inicio de sesión</h3>
             <p>Bienvenido de nuevo</p>
             <?php
