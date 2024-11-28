@@ -31,6 +31,10 @@
                 <h2>Inicio</h2>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
+                    <h3>Empleado    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
+                        $result = mysqli_query($conn, $query);
+                        $row = $result->fetch_assoc();
+                        echo $row['NOMBRES']; ?></h3>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA= $id";
@@ -47,7 +51,7 @@
                 </div>
             </nav>
 
-            <div class="container-fluid">
+            <div class="container-fluid" id="contemp">
                 <div class="mb-3">
                     <H1>Tu Dashboard</H1>
                 </div>

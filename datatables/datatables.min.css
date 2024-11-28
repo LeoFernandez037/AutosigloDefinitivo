@@ -837,6 +837,11 @@ div.dt-container .dt-paging {
     color: inherit
 }
 
+div.dt-container .dt-length {
+    visibility: hidden;
+}
+
+
 div.dt-container .dataTables_scroll {
     clear: both
 }

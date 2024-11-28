@@ -22,7 +22,11 @@
             </div>
         </nav>
     </header>
-
+    <div class="patitulo">
+        <div class="titulo-contacto">
+            <h1>Contactenos</h1>
+        </div>
+    </div>
     <main>
         <div class="contact-form">
             <h2>Mandanos un mensaje</h2>

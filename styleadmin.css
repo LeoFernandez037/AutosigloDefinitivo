@@ -20,6 +20,10 @@ h1 {
     font-size: 1.5rem;
 }
 
+h3 {
+    margin: 0px;
+}
+
 html,
 body {
     height: 100%;
@@ -227,5 +231,5 @@ h6 {
 }
 
 .container-fluid {
-    height: 450px;
+    height: 746px !important;
 }

@@ -108,7 +108,8 @@
                             <input type="text" name="TELEFONO" value="<?php echo $TELEFONO; ?>"class="form-control" placeholder="Actualiza tu Telefono">
                         </div>
                         </div>
-                        <button class="btn_actualizar" name="update">
+                        &nbsp;
+                        <button class="btn btn-primary btn-sm" name="update">
                             ACTUALIZAR
                         </button>
                     </form>

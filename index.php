@@ -77,7 +77,7 @@
                 aria-label="Siguiente imagen">&gt;</button>
         </section>
 
-        <section class="features">
+        <!-- <section class="features">
             <div class="feature">   
                 <h3>Calidad</h3>
                 <p>Nuestro compromiso con la excelencia garantiza que cada vehículo y servicio que ofrecemos cumpla con los más altos estándares de calidad.</p>
@@ -86,7 +86,7 @@
                 <h3>Centrado en el cliente</h3>
                 <p>Ponemos a nuestros clientes en primer lugar, esforzándonos por superar las expectativas y brindar un servicio incomparable en cada punto de contacto.</p>
             </div>
-        </section>
+        </section> -->
 
         <section class="car-section2">
             <div class="title-car-section">
@@ -143,16 +143,60 @@
 
         <section class="payment-types">
             <div class="title-payment">
-                <h2>Tipos de pago</h2>
+                <h2>TIPOS DE PAGO</h2>
+                <img src="./imagenes/FondoDinero.png" alt="Fondo" class="fondo-pagos1">
+                <img src="./imagenes/FondoDinero.png" alt="Fondo" class="fondo-pagos2">
+                <img src="./imagenes/FondoDinero.png" alt="Fondo" class="fondo-pagos3">
             </div>
-            <div class="payment-grid">
-                <div class="payment-card">
-                    <img src="./imagenes/dinero-en-efectivo.png" alt="Pago en efectivo">
-                    <h3>Efectivo</h3>
+            <div class="payment-tarjets">
+                <p>LA EMPRESA AUTOSIGLO SE PREOCUPA POR TU BOLSILLO POR ESA RAZÓN TENEMOS LAS SIGUIENTES FORMAS DE PAGO
+                </p>
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <div class="titulo-pag">
+                            <h3>AL CONTADO</h3>
+                            <img src="./imagenes/dinero-en-efectivo.png" alt="Pago en efectivo">
+                        </div>
+                        <p>Con nuestra opción de pago al contado te permite adquirir tu vehículo de forma rápida, con
+                            entrega inmediata y descuentos exclusivos. Una opción ágil para quienes prefieren una compra
+                            directa.</p>
+                    </div>
+                    <div class="payment-card">
+                        <div class="titulo-pag">
+                            <h3>FINANCIAMIENTO</h3>
+                            <img src="./imagenes/financiamiento.png" alt="Pago con tarjeta de crédito">
+                        </div>
+                        <p>Con nuestra opción de financiamiento, puedes adquirir tu auto y pagarlo en cómodas cuotas a
+                            través del banco. Disfruta de un proceso simple y asesoría personalizada para elegir el plan
+                            ideal.</p>
+                    </div>
                 </div>
-                <div class="payment-card">
-                    <img src="./imagenes/tarjeta-de-debito.png" alt="Pago con tarjeta de crédito">
-                    <h3>Tarjeta de crédito</h3>
+            </div>
+        </section>
+
+        <section class="nosotros">
+            <div class="nosotros-titulo">
+                <h2>QUIENES SOMOS</h2>
+            </div>
+            <div class="nosotros-cuerpo">
+                <div class="nosotros-card">
+                    <p>En AutoSiglo, somos una concesionaria de autos comprometida con ofrecerte las mejores opciones en
+                        vehículos nuevos y usados, adaptados a tus necesidades y estilo de vida. Con años de experiencia
+                        en el mercado automotriz, nos destacamos por brindar un servicio personalizado, confiable y
+                        transparente, asegurando que cada uno de nuestros clientes encuentre el automóvil perfecto.</p>
+                    <img src="./imagenes/QuienesSomos.jpg" alt="Imagen.png">
+                </div>
+            </div>
+            <div class="nosotros-titulo">
+                <h2>¿QUÉ OFRECEMOS</h2>
+            </div>
+            <div class="nosotros-cuerpo">
+                <div class="nosotros-card2">
+                    <img src="./imagenes/QOfrecemos.png" alt="Imagen.png">
+                    <p>Nos enorgullece ofrecer una amplia variedad de productos y servicios, que van desde vehículos
+                        nuevos y usados, hasta servicios y mantenimiento asequibles. Además de ofrecer una variedad de
+                        servicios, creemos brindar una experiencia personalizada quele brinde flexibilidad, por lo que
+                        también ofrecemos una variedad de opciones de pagos, asi como garantías de los vehículos.</p>
                 </div>
             </div>
         </section>

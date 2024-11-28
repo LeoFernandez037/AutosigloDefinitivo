@@ -14,11 +14,11 @@ header {
     z-index: 100;
 }
 
-/* nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-} */
+}
 
 a {
     font-size: x-large;
@@ -446,31 +446,70 @@ footer {
 
 .payment-types {
     background-color: #f8f9fa;
+    width: 100%;
+    height: fit-content;
 }
 
 .title-payment {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(/imagenes/FondoDinero.png);
     width: 100%;
     height: 250px;
+    margin-top: 50px;
 }
 
 .title-payment h2 {
+    position: absolute;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 60px;
     font-weight: bolder;
+    padding: 10px;
+    z-index: 2;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.title-payment img {
+    object-fit: cover;
+    height: 80%;
+    width: 32.5%;
+}
+
+.fondo-pagos1 {
+    border-radius: 50px 0 0 50px;
+}
+
+.fondo-pagos3 {
+    border-radius: 0 50px 50px 0;
+}
+
+.payment-tarjets {
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background: rgb(28, 35, 49);
+}
+
+.payment-tarjets p {
+    margin: 0;
+    width: 40%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .payment-grid {
     display: flex;
     align-items: center;
-    gap: 15%;
+    gap: 10%;
     padding-top: 20px;
     padding-bottom: 20px;
     justify-content: center;
-    background: rgb(28, 35, 49);
     width: 100%;
     height: fit-content;
 }
@@ -478,20 +517,46 @@ footer {
 .payment-card {
     display: flex;
     background-color: white;
-    border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     width: 450px;
-    height: 150px;
+    height: 400px;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+
+.titulo-pag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .payment-card:hover {
     transform: translateY(-5px);
 }
+
+
+.titulo-pag img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.titulo-pag h3 {
+    margin: 0;
+    text-align: center;
+    background-color: #ffff;
+    color: #1c2331;
+    font-size: 30px;
+}
+
 
 .payment-card img {
     width: 100px;
@@ -500,11 +565,18 @@ footer {
 }
 
 .payment-card h3 {
-    padding: 1rem;
     margin: 0;
     text-align: center;
     background-color: #ffff;
     color: #1c2331;
+    font-size: 30px;
+}
+
+.payment-card p {
+    width: 90%;
+    color: black;
+    margin: 0;
+    margin-top: 20px;
 }
 
 .webada {
@@ -539,6 +611,86 @@ footer {
     color: white;
     margin-top: 3.5rem;
 }
+
+.nosotros {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nosotros-titulo {
+    width: 98%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 25px solid black;
+    border-top: 25px solid black;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.nosotros-titulo h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.nosotros-cuerpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+}
+
+.nosotros-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    background: linear-gradient(30deg, rgb(28, 35, 49), rgb(220, 53, 69));
+    border-radius: 50px;
+}
+
+.nosotros-card p {
+    font-size: 21px;
+    color: white;
+    margin: 40px;
+}
+
+.nosotros-card img {
+    width: 40%;
+    border-radius: 50px;
+}
+
+.nosotros-card2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    background: linear-gradient(30deg, rgb(28, 35, 49), rgb(220, 53, 69));
+    border-radius: 50px;
+    height: 300px;
+}
+
+.nosotros-card2 p {
+    font-size: 21px;
+    color: white;
+    margin: 40px;
+    width: 60%;
+}
+
+.nosotros-card2 img {
+    width: 40%;
+    border-radius: 40px;
+    height: 100%;
+}
+
 
 .footer2 {
     margin-top: 0px;

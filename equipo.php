@@ -27,7 +27,9 @@
 
     <main>
         <section class="empleados">
-            <h1>Empleados</h1>
+            <div class="titulo-empleados">
+                <h1>Empleados</h1>
+            </div>
             <div class="empleados-grid">
                 <?php
                 $query = "SELECT empleado.FOTO, persona.NOMBRES FROM empleado JOIN persona WHERE empleado.ID_PERSONA = persona.ID_PERSONA";

@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="clientes.php?id=<?php echo $id?>" class="sidebar-link">
+                    <a href="clientesempleado.php?id=<?php echo $id?>" class="sidebar-link">
                         <i class="lni lni-users"></i>
                         <span>Clientes</span>
                     </a>
@@ -33,7 +33,7 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="autos.php?id=<?php echo $id?>" class="sidebar-link">Autos</a>
+                            <a href="autosadmin2.php?id=<?php echo $id?>" class="sidebar-link">Autos</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="repuestos.php?id=<?php echo $id?>" class="sidebar-link">Repuestos</a>

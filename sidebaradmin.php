@@ -49,10 +49,10 @@
                             <a href="clientesadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver lista clientes</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Editar clientes</a>
+                            <a href="clientesadminedit.php?id=<?php echo $id?>" class="sidebar-link">•     Editar clientes</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar clientes</a>
+                            <a href="clientesadmindelete.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar clientes</a>
                         </li>
                     </ul>
                 </li>
@@ -68,17 +68,55 @@
                             <a href="empleadosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver nomina</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Editar empleados</a>
+                            <a href="empleadosadminedit.php?id=<?php echo $id?>" class="sidebar-link">•     Editar empleados</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar empleados</a>
+                            <a href="empleadosadmindelete.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar empleados</a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#auth2" aria-expanded="false" aria-controls="auth">
+                        data-bs-target="#authcar" aria-expanded="false" aria-controls="auth">
                         <!-- <i class="lni lni-producthunt"></i> -->
+                        <i class="lni lni-users"></i>
+                        <span>Autos</span>
+                    </a>
+                    <ul id="authcar" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="autosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver listado</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="autosadminedit.php?id=<?php echo $id?>" class="sidebar-link">•     Editar autos</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="autosadmindelete.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar autos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#authres" aria-expanded="false" aria-controls="auth">
+                        <!-- <i class="lni lni-producthunt"></i> -->
+                        <i class="lni lni-users"></i>
+                        <span>Repuestos</span>
+                    </a>
+                    <ul id="authres" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="repuestosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver listado</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="empleadosadminedit.php?id=<?php echo $id?>" class="sidebar-link">•     Editar repuestos</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="empleadosadmindelete.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar repuestos</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li class="sidebar-item">
+                    <a href="#" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#auth2" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-producthunt"></i> 
                         <img src="./inv.png" alt="">
                         <span>Inventario</span> 
                     </a>
@@ -90,9 +128,9 @@
                             <a href="repuestosadmin.php?id=<?php echo $id?>" class="sidebar-link">• Repuestos</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="sidebar-item">
-                    <a href="Ventas.php?id=<?php echo $id?>" class="sidebar-link">
+                    <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">
                         <img src="./pen.png" alt="">
                         <span>Ventas</span>
                     </a>

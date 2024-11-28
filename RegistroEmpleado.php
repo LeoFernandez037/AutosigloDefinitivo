@@ -4,17 +4,22 @@ $usuario = "root";
 $contrasena = "";
 $dbname = "db_autosiglo_v2";
 
+
+//$id = 3; //valor enviado del login cambiandolo se mueve el usuario
+
 $conn = new mysqli($servidor, $usuario, $contrasena, $dbname);
 
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-
+$id = $_POST['id'];
 $nombre = $_POST['nombre'];
 $ApPaterno = $_POST['ApPaterno'];
 $ApMaterno = $_POST['ApMaterno'];
 $email = $_POST['email'];
 $nik = $_POST['nik'];
+$tel = $_POST['tel'];
+$ci = $_POST['ci'];
 $contraseña = $_POST['Contraseña'];
 $confirm_password = $_POST['confirm_password'];
 
@@ -37,22 +42,22 @@ if (count($errores) > 0) {
     foreach ($errores as $error) {
         echo "<p style='color:red;'>$error</p>";
     }
-    echo "<p><a href='registro.php'>Volver al formulario de registro</a></p>";
+    echo "<p><a href='registro.php?id=<?php echo $id?>'>Volver al formulario de registro</a></p>";
     exit();
 }
 
 $conn->begin_transaction();
 
 try {
-    $sql_persona = "INSERT INTO PERSONA (NOMBRES, AP_PATERNO, AP_MATERNO, CORREO_ELECTRONICO) 
-                    VALUES ('$nombre', '$ApPaterno', '$ApMaterno', '$email')";
+    $sql_persona = "INSERT INTO PERSONA (NOMBRES, AP_PATERNO, AP_MATERNO, CORREO_ELECTRONICO, TELEFONO, CI) 
+                    VALUES ('$nombre', '$ApPaterno', '$ApMaterno', '$email', '$tel', '$ci')";
     if ($conn->query($sql_persona) === TRUE) {
         $id_persona = $conn->insert_id;
         $sql_usuario = "INSERT INTO USUARIO (ID_PERSONA, NICKNAME, CONTRASEÑA, ID_ROL)
                         VALUES ('$id_persona', '$nik', '$contraseña', 3)";
         if ($conn->query($sql_usuario) === TRUE) {
             $conn->commit();
-            header("Location: empleadosadmin.php");
+            header("Location: empleadosadmin.php?id=$id");
             exit();
         } else {
             $conn->rollback();
