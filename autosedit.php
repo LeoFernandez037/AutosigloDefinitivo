@@ -124,77 +124,70 @@
 
         $id = $_GET['id'];
         $id_auto = $_GET['id_auto'];
-        $query = "SELECT * FROM caracteristicas JOIN auto JOIN foto_auto WHERE foto_auto.ID_AUTO = auto.ID_CARACTERISTICA AND auto.ID_CARACTERISTICA = caracteristicas.ID_CARACTERISTICA AND auto.ID_AUTO = $id_auto";
+        $query = "SELECT * FROM caracteristicas JOIN auto JOIN foto_auto WHERE foto_auto.ID_AUTO = auto.ID_CARACTERISTICA AND auto.ID_CARACTERISTICA = caracteristicas.ID_CARACTERISTICA AND auto.ID_AUTO = '$id_auto';";
         $resultado = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_array($result); 
+        if (mysqli_num_rows($resultado) == 1) {
+            $row = mysqli_fetch_array($resultado);
+
+            $id = $_GET['id'];
+            $id_auto = $row['ID_AUTO'];
+            $nombre = $row['NOMBRE'];
+            $precio = $row['PRECIO'];
+            $numerocha = $row['NUMERO_CHASIS'];
+            $traccion = $row['TRACCION'];
+            $caracteristica = $row['ID_CARACTERISTICA'];
+
+            $imagenurl = $row['FOTOGRAFIA'];
+
+            $transmision = $row['TRANSMISION'];
+            $suspensiondel = $row['SUSPENSION_DELANTERA'];
+            $suspensiontras = $row['SUSPENSION_TRASERA'];
+            $frenosdel = $row['FRENOS_DELANTEROS'];
+            $frenostras = $row['FRENOS_TRASEROS'];
+            echo "<script>console.log('Console: " . $row . "' );</script>";
         }
     }
 
-    if(isset($_POST['update'])){
-        $id = $_GET['id'];
-        $id_auto = $_GET['id_auto'];
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $numerocha = $_POST['numerocha'];
-        $traccion = $_POST['traccion'];
-        $caracteristica = $_POST['caracteristica'];
-
-        $imagenurl = $_POST['imagenurl'];
-
-        $transmision = $_POST['transmision'];
-        $suspensiondel = $_POST['suspensiondel'];
-        $suspensiontras = $_POST['suspensiontras'];
-        $frenosdel = $_POST['frenosdel'];
-        $frenostras = $_POST['frenostras'];
-
-        $query0 = "UPDATE auto set NOMBRE = '$nombre', PRECIO = '$precio', NUMERO_CHASIS = '$numerocha', TRACCION = '$traccion' WHERE ID_AUTO = '$id_auto'";
-        $query1 = "UPDATE caracteristicas set TRANSMISION = '$transmision', SUSPENSION_DELANTERA = '$suspensiondel', SUSPENSION_TRASERA = '$suspensiondeltras', FRENOS_DELANTEROS = '$frenosdel', FRENOS_TRASEROS = '$frenostras' WHERE id = '$id'";
-        $query2 = "UPDATE auto set nombre = '$tittle', description = '$description' WHERE id = '$id'";
-        mysqli_query($conn,$query0);
-        mysqli_query($conn,$query1);
-        mysqli_query($conn,$query2);
-        header("Location: index.php");
-    }
+   
 ?>
 
     <div id="agregarAuto" class="modal2"> 
         <div class="modal-content">
             <div class="login-box">
             <div class="close-btn">
-                <a class="modal_close" href="autosadminedit.php?id=<?php echo $id?>">X;</a>
+                <a class="modal_close" href="autosadminedit.php?id=<?php echo $id?>">x</a>
             </div>
-            <h2>Agregar Auto</h2>
+            <h2>Editar Auto</h2>
             <form action="autosedit.php?id=<?php echo $id?>&id_auto=<?php echo $id_auto?>" method="POST" enctype="multipart/form-data">
                 <input style= "visibility:hidden;" type="text" id="id" name="id" value = "<?php echo $id?>">
+                <input style= "visibility:hidden;" type="text" id="caracteristica" name="caracteristica" value = "<?php echo  $caracteristica?>">
                 <div class="form-container">
                     <div class="left-column">
-                       
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="vitara" required>
+                        <input type="text" id="nombre" class="form-control" name="nombre" placeholder="<?php echo $nombre; ?>" value = "<?php echo $nombre; ?>">
                         <label for="precio">Precio:</label>
-                        <input type="text" id="precio" name="precio" placeholder="En dolares" required>
+                        <input type="text" id="precio" name="precio" placeholder="<?php echo $precio; ?>" value = "<?php echo $precio; ?>">
                         <label for="numerocha">Numero de chasis:</label>
-                        <input type="text" id="numerocha" name="numerocha" placeholder="1HGBH41JXMN109087" required>
+                        <input type="text" id="numerocha" name="numerocha" placeholder="<?php echo $numerocha; ?>" value = "<?php echo $numerocha; ?>">
                         <label for="traccion">Traccion:</label>
-                        <input type="text" id="traccion" name="traccion" placeholder="4x2" required>
+                        <input type="text" id="traccion" name="traccion" placeholder="<?php echo $traccion; ?>" value = "<?php echo $traccion; ?>">
                         <label for="traccion">Imagen en formato url:</label>
-                        <input type="text" id="imagenurl" name="imagenurl" placeholder="https://cdn-dyn.a" required>
+                        <input type="text" id="imagenurl" name="imagenurl" placeholder="<?php echo $imagenurl; ?>" value = "<?php echo $imagenurl; ?>">
                     </div>
                     <div class="right-column">
                         <label for="transmision">Transmision:</label>
-                        <input type="text" id="transmision" name="transmision" placeholder="Manual 5 Velocidades" required>
+                        <input type="text" id="transmision" name="transmision" value = "<?php echo $transmision; ?>" placeholder="<?php echo $transmision; ?>" >
                         <label for="suspensiondel">Suspension Delantera:</label>
-                        <input type="text" id="suspensiondel" name="suspensiondel" placeholder="Eje Rígido" required>
+                        <input type="text" id="suspensiondel" name="suspensiondel" value = "<?php echo $suspensiondel; ?>" placeholder="Eje Rígido">
                         <label for="suspensiontras">Suspension Trasera:</label>
-                        <input type="text" id="suspensiontras" name="suspensiontras" placeholder="Eje Rígido" required>
+                        <input type="text" id="suspensiontras" name="suspensiontras" value = "<?php echo $suspensiontras; ?>" placeholder="Eje Rígido">
                         <label for="text">Frenos Delanteros:</label>
-                        <input type="text" id="frenosdel" name="frenosdel" placeholder="Discos Ventilados" required>
+                        <input type="text" id="frenosdel" name="frenosdel"  value = "<?php echo $frenosdel; ?>" placeholder="Discos Ventilados">
                         <label for="text">Frenos Traseros:</label>
-                        <input type="text" id="frenostras" name="frenostras" placeholder="Tambores" required>
+                        <input type="text" id="frenostras" name="frenostras" value = "<?php echo $frenostras; ?>" placeholder="Tambores" >
                     </div>
                 </div>
-                <button type="submit" >Registrar</button>
+                <button type="submit" name = "update">Registrar</button>
             </form>
             </div>
             

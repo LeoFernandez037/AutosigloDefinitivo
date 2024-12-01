@@ -14,6 +14,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+    <script src="https://unpkg.com/xlsx@latest/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+    <script src="excel.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type = "text/css" href="dataTables/datatables.min.css" >
     <title>Clientes</title>
@@ -32,7 +37,11 @@
                 <a href="#agregarCliente" class="btn btn-primary btn-sm" style = "margin-left:10px;">Agregar cliente +</a>
                 <!-- <a class="modal_close" href="">&times;</a> -->
                 <a href="clientesadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Refrescar Tabla</a>
-                <a href="#" class="btn btn-success btn-sm" style = "margin-left:10px;">Exportar hoja de calculo</a>
+                
+                <button id="btnExportar" style = "margin-left:10px;" class="btn btn-success">
+                <i class="fas fa-file-excel"></i> Exportar datos a Excel
+                </button>
+
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                     <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
@@ -60,6 +69,7 @@
                 <!-- <table id="example" class="table table-bordered"> -->
                 <table id="example" class="display">
                     <thead>
+                        <th style="background-color: #b71c1c; color:white;" >Foto de Perfil</th>
                         <th style="background-color: #b71c1c; color:white;" >Nombre</th>
                         <th style="background-color: #b71c1c; color:white;" >Email</th>
                         <th style="background-color: #b71c1c; color:white;" >Teléfono</th>
@@ -73,6 +83,7 @@
 
                             while($row = mysqli_fetch_array($result_tasks)) { ?>
                                 <tr>
+                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 60px;  border-radius: 100%;" srcset=""></td>
                                     <td><?php echo $row['NOMBRES']; ?></td>
                                     <td><?php echo $row['CORREO_ELECTRONICO']; ?></td>
                                     <td><?php echo $row['TELEFONO']; ?></td>
@@ -134,6 +145,8 @@
                         <input type="text" id="ApMaterno" name="ApMaterno" placeholder="Argandoña" required>
                         <label for="email">Correo Electrónico:</label>
                         <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        <label for="Nickname">Fotografia en formato url:</label>
+                        <input type="text" id="foto" name="foto" placeholder="https://...." required>
                     </div>
                     <div class="right-column">
                         <label for="Nickname">Nickname:</label>
@@ -155,6 +168,34 @@
             
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const $btnExportar = document.querySelector("#btnExportar"),
+            $tabla = document.querySelector("#example");
+
+            let tableExport = new TableExport($tabla, {
+                exportButtons: false,
+                filename: "DatosClientesExport",
+                sheetname: "Tabla",
+                
+            });
+
+            $btnExportar.addEventListener("click", function(){
+                let datos = tableExport.getExportData();
+                let pref = datos.example.xlsx;
+                tableExport.export2file(
+                    pref.data,
+                    pref.mimeType,
+                    pref.filename,
+                    pref.fileExtension,
+                    pref.merges,
+                    pref.RTL,
+                    pref.sheetname
+                );
+            });
+        });
+    </script>
 
 </body>
 

@@ -59,6 +59,7 @@
                 <!-- <table id="example" class="table table-bordered"> -->
                 <table id="example" class="display">
                     <thead>
+                        <th style="background-color: #b71c1c; color:white;" >Foto de Perfil</th>
                         <th style="background-color: #b71c1c; color:white;" >Nombre</th>
                         <th style="background-color: #b71c1c; color:white;" >Email</th>
                         <th style="background-color: #b71c1c; color:white;" >Teléfono</th>
@@ -72,6 +73,7 @@
 
                             while($row = mysqli_fetch_array($result_tasks)) { ?>
                                 <tr>
+                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 60px;  border-radius: 100%;" srcset=""></td>
                                     <td><?php echo $row['NOMBRES']; ?></td>
                                     <td><?php echo $row['CORREO_ELECTRONICO']; ?></td>
                                     <td><?php echo $row['TELEFONO']; ?></td>

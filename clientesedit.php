@@ -9,16 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
+
     <link rel="stylesheet" type = "text/css" href="dataTables/datatables.min.css" >
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-    <script src="https://unpkg.com/xlsx@latest/dist/xlsx.full.min.js"></script>
-    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
-    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
-    <script src="excel.js"></script>
-
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type = "text/css" href="dataTables/datatables.min.css" >
     <title>Clientes</title>
 </head>
 
@@ -29,16 +26,11 @@
     ?>
     <div class="wrapper">
         <?php include 'sidebaradmin.php'; ?>
-        <div class="main" id= "main">
+        <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom">
-                <h2>Nomina de empleados</h2>
-                <a href="#agregarEmpleado"  class="btn btn-primary btn-sm" style = "margin-left:10px;">Agregar empleado +</a>
-                <!-- <a class="modal_close" href="">&times;</a> -->
+                <h2>Editar informacion de clientes</h2>                <!-- <a class="modal_close" href="">&times;</a> -->
                 <a href="empleadosadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Refrescar Tabla</a>
-                <!-- <a id="btnExportar" class="btn btn-success btn-sm" style = "margin-left:10px;">Exportar hoja de calculo</a> -->
-                <button id="btnExportar" style = "margin-left:10px;" class="btn btn-success">
-                <i class="fas fa-file-excel"></i> Exportar datos a Excel
-                </button>
+                <a href="empleadosadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Exportar hoja de calculo</a>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                     <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
@@ -61,19 +53,21 @@
                     </ul>
                 </div>
             </nav>
+            
             <div class="col-md-8">
-                <table id="empleadostableadmin" class="display">
+                <!-- <table id="example" class="table table-bordered"> -->
+                <table id="example" class="display">
                     <thead>
                         <th style="background-color: #b71c1c; color:white;" >Foto de Perfil</th>
                         <th style="background-color: #b71c1c; color:white;" >Nombre</th>
                         <th style="background-color: #b71c1c; color:white;" >Email</th>
                         <th style="background-color: #b71c1c; color:white;" >Teléfono</th>
                         <th style="background-color: #b71c1c; color:white;" >CI</th>
-                        <th style="background-color: #b71c1c; color:white;" >Acciones</th>
+                        <th style="background-color: #b71c1c; color:white;" >Accion</th>
                     </thead>
                     <tbody>
                         <?php  
-                            $query = "SELECT * FROM `persona` JOIN `usuario` WHERE persona.ID_PERSONA = usuario.ID_PERSONA AND ID_ROL = 3;";
+                            $query = "SELECT * FROM `persona` JOIN `usuario` WHERE persona.ID_PERSONA = usuario.ID_PERSONA AND ID_ROL = 1;";
                             $result_tasks = mysqli_query($conn, $query);
 
                             while($row = mysqli_fetch_array($result_tasks)) { ?>
@@ -84,122 +78,103 @@
                                     <td><?php echo $row['TELEFONO']; ?></td>
                                     <td><?php echo $row['CI']; ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-primary btn-sm">Ver más detalles</a>
+                                        <a href="clientesedit.php?id=<?php echo $id?>&id_persona=<?php echo $row['ID_PERSONA']?>" class="btn btn-primary btn-sm">Editar</a>
+                                        <!-- <a href="#verdata" class="btn btn-warning btn-sm">Editar</a>
+                                        <a href="#verdata" class="btn btn-primary btn-sm">Eliminar</a> -->
                                     </td>
                                 </tr>
-                        <?php } ?>
+                            <?php } ?>
                     </tbody>
                 </table>
             </div>
             <?php include('footer2.php') ?>
         </div>
-    
-    </div>  
-   
-    <!-- > codigo para scripts-->                           
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="assets/js/addEmpleado.js"></script>                            
-    <script src="assets/js/detallesEmpleado.js"></script>                            
-
-    <!-- > codigo para datatable-->
-    
     <script src = "https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script>
         // new DataTable('#example');
         $(document).ready(function() {
-        $('#empleadostableadmin').DataTable({
+        $('#example').DataTable({
             "language": {
             "url": "https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
             }
         });
 });
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<?php
+    include("db.php");
+    
+    if (isset($_GET['id']) AND isset($_GET['id_persona'])) {
+        $id = $_GET['id'];
+        $id_persona = $_GET['id_persona'];
 
-<!--     
-    <div id="verdata" class="modal"> 
-        <div class="modal-content">
-            <div class="close-btn">
-                <a class="modal_close" href="">&times;</a>
-            </div>
-            <h2>Ver usuario</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor id, et deleniti incidunt, aspernatur voluptatibus quae nostrum doloremque quam accusantium debitis. Eligendi amet quos reiciendis unde. Sunt, tenetur fuga.</p>
-        </div>
-    </div> -->
+        $query = "SELECT * FROM PERSONA JOIN USUARIO WHERE persona.ID_PERSONA = usuario.ID_PERSONA AND usuario.ID_PERSONA = '$id_persona';";
 
-    <div id="agregarEmpleado" class="modal"> 
+        $resultado2 = mysqli_query($conn, $query);
+        if (mysqli_num_rows($resultado2) == 1) {
+            $row = mysqli_fetch_array($resultado2);
+            
+            $id = $_GET['id'];
+            $id_persona = $_GET['id_persona'];
+            $nombre = $row['NOMBRES'];
+            $ci = $row['CI'];
+            $ap_paterno = $row['AP_PATERNO'];
+            $ap_materno = $row['AP_MATERNO'];
+            $fechanac = $row['FECHA_NACIMIENTO'];
+            $correo = $row['CORREO_ELECTRONICO'];
+            $telefono = $row['TELEFONO'];
+            $foto = $row['FOTO'];
+            $nick = $row['NICKNAME'];
+        } 
+    }
+?>
+
+
+    <div id="agregarCliente" class="modal2"> 
         <div class="modal-content">
             <div class="login-box">
             <div class="close-btn">
-                <a class="modal_close" href="">&times;</a>
+                <a class="modal_close" href="clientesadminedit.php?id=<?php echo $id; ?>">&times;</a>
             </div>
-            <h2>Agregar Empleado</h2>
-            <form id="formularioEmpleado" action="" method="POST" enctype="multipart/form-data">
+            <h2>Agregar Cliente</h2>
+            <form id="formularioCliente" action="clientessave.php?id=<?php echo $id; ?>&id_persona=<?php echo $id_persona; ?>" method="POST" enctype="multipart/form-data">
                 <input style= "visibility:hidden;" type="text" id="id" name="id" value = "<?php echo $id?>">
                 <div class="form-container">
                     <div class="left-column">
-                       
                         <label for="nombre">Nombres:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Genesis Candida" required>
+                        <input type="text" id="nombre" name="nombre" placeholder="Genesis Candida" value = "<?php echo $nombre; ?>"  required>
                         <label for="ApPaterno">Apellido paterno:</label>
-                        <input type="text" id="ApPaterno" name="ApPaterno" placeholder="Suarez" required>
+                        <input type="text" id="ApPaterno" name="ApPaterno" placeholder="Suarez" value = "<?php echo $ap_paterno; ?>" required>
                         <label for="ApMaterno">Apellido materno:</label>
-                        <input type="text" id="ApMaterno" name="ApMaterno" placeholder="Argandoña" required>
+                        <input type="text" id="ApMaterno" name="ApMaterno" placeholder="Argandoña"value = "<?php echo $ap_materno; ?>" required>
                         <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" value = "<?php echo $correo; ?>" required>
+                        <label for="ApMaterno">Imagen:</label>
+                        <input type="text" id="img" name="img" placeholder="falta imagen"value = "<?php echo $foto; ?>" required>
                     </div>
                     <div class="right-column">
                         <label for="Nickname">Nickname:</label>
-                        <input type="text" id="nik" name="nik" placeholder="Shally" required>
+                        <input type="text" id="nik" name="nik" placeholder="dato faltante" value = "<?php echo $nick; ?>" required>
+                        <label for="Nickname">Fecha de nacimiento: (YYYY-MM-DD)</label>
+                        <input type="text" id="fechanac" name="fechanac" placeholder="dato faltante" value = "<?php echo $fechanac; ?>" required>
                         <label for="Nickname">Telefono:</label>
-                        <input type="text" id="tel" name="tel" placeholder="78945134" required>
+                        <input type="text" id="tel" name="tel" placeholder="dato faltante" value = "<?php echo $telefono; ?>" required>
                         <label for="Nickname">CI:</label>
-                        <input type="text" id="ci" name="ci" placeholder="89446840" required>
-                        <label for="contraseña">Contraseña:</label>
-                        <input type="password" id="password" name="Contraseña" placeholder="1TE4567890" required>
-                        <label for="confirmar_contraseña">Confirmar Contraseña:</label>
-                        <input type="password" id="confirm_password" name="confirm_password"
-                            placeholder="Repite la contraseña" required>
+                        <input type="text" id="ci" name="ci" placeholder="dato faltante" value = "<?php echo $ci; ?>" required>
                     </div>
                 </div>
-                <button type="submit" onclick = "registrarEmpleado(event)">Registrar</button>
+                <button type="submit" name = "update" >Registrar</button>
             </form>
             </div>
             
         </div>
     </div>
 
-    <!-- script para exportar a excel -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            const $btnExportar = document.querySelector("#btnExportar"),
-            $tabla = document.querySelector("#empleadostableadmin");
-
-            let tableExport = new TableExport($tabla, {
-                exportButtons: false,
-                filename: "DatosEmpleadosExport",
-                sheetname: "Tabla",
-                
-            });
-
-            $btnExportar.addEventListener("click", function(){
-                let datos = tableExport.getExportData();
-                let pref = datos.empleadostableadmin.xlsx;
-                tableExport.export2file(
-                    pref.data,
-                    pref.mimeType,
-                    pref.filename,
-                    pref.fileExtension,
-                    pref.merges,
-                    pref.RTL,
-                    pref.sheetname
-                );
-            });
-        });
-    </script>
-
 </body>
+
 </html>

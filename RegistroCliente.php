@@ -20,6 +20,7 @@ $email = $_POST['email'];
 $nik = $_POST['nik'];
 $tel = $_POST['tel'];
 $ci = $_POST['ci'];
+$foto = $_POST['foto'];
 $contraseña = $_POST['Contraseña'];
 $confirm_password = $_POST['confirm_password'];
 
@@ -53,8 +54,8 @@ try {
                     VALUES ('$nombre', '$ApPaterno', '$ApMaterno', '$email', '$tel', '$ci')";
     if ($conn->query($sql_persona) === TRUE) {
         $id_persona = $conn->insert_id;
-        $sql_usuario = "INSERT INTO USUARIO (ID_PERSONA, NICKNAME, CONTRASEÑA, ID_ROL)
-                        VALUES ('$id_persona', '$nik', '$contraseña', 1)";
+        $sql_usuario = "INSERT INTO USUARIO (ID_PERSONA, NICKNAME, FOTO ,CONTRASEÑA, ID_ROL)
+                        VALUES ('$id_persona', '$nik', '$foto' ,'$contraseña', 1)";
         if ($conn->query($sql_usuario) === TRUE) {
             $conn->commit();
             header("Location: clientesadmin.php?id=$id");

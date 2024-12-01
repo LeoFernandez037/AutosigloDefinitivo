@@ -58,6 +58,7 @@
                 <!-- <table id="example" class="table table-bordered"> -->
                 <table id="example" class="display">
                     <thead>
+                        <th style="background-color: #b71c1c; color:white;" >Foto de Perfil</th>
                         <th style="background-color: #b71c1c; color:white;" >Nombre</th>
                         <th style="background-color: #b71c1c; color:white;" >Email</th>
                         <th style="background-color: #b71c1c; color:white;" >Teléfono</th>
@@ -71,12 +72,13 @@
 
                             while($row = mysqli_fetch_array($result_tasks)) { ?>
                                 <tr>
+                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 60px;  border-radius: 100%;" srcset=""></td>
                                     <td><?php echo $row['NOMBRES']; ?></td>
                                     <td><?php echo $row['CORREO_ELECTRONICO']; ?></td>
                                     <td><?php echo $row['TELEFONO']; ?></td>
                                     <td><?php echo $row['CI']; ?></td>
                                     <td>
-                                        <a href="#verdata" class="btn btn-primary btn-sm">Editar</a>
+                                        <a href="clientesedit.php?id=<?php echo $id?>&id_persona=<?php echo $row['ID_PERSONA']?>" class="btn btn-primary btn-sm">Editar</a>
                                         <!-- <a href="#verdata" class="btn btn-warning btn-sm">Editar</a>
                                         <a href="#verdata" class="btn btn-primary btn-sm">Eliminar</a> -->
                                     </td>
@@ -114,6 +116,48 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolor id, et deleniti incidunt, aspernatur voluptatibus quae nostrum doloremque quam accusantium debitis. Eligendi amet quos reiciendis unde. Sunt, tenetur fuga.</p>
         </div>
         
+    </div>
+    
+    <div id="agregarCliente" class="modal"> 
+        <div class="modal-content">
+            <div class="login-box">
+            <div class="close-btn">
+                <a class="modal_close" href="">&times;</a>
+            </div>
+            <h2>Agregar Cliente</h2>
+            <form id="formularioCliente" action="" method="POST" enctype="multipart/form-data">
+                <input style= "visibility:hidden;" type="text" id="id" name="id" value = "<?php echo $id?>">
+                <div class="form-container">
+                    <div class="left-column">
+                       
+                        <label for="nombre">Nombres:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Genesis Candida" required>
+                        <label for="ApPaterno">Apellido paterno:</label>
+                        <input type="text" id="ApPaterno" name="ApPaterno" placeholder="Suarez" required>
+                        <label for="ApMaterno">Apellido materno:</label>
+                        <input type="text" id="ApMaterno" name="ApMaterno" placeholder="Argandoña" required>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="right-column">
+                        <label for="Nickname">Nickname:</label>
+                        <input type="text" id="nik" name="nik" placeholder="Shally" required>
+                        <label for="Nickname">Telefono:</label>
+                        <input type="text" id="tel" name="tel" placeholder="78945134" required>
+                        <label for="Nickname">CI:</label>
+                        <input type="text" id="ci" name="ci" placeholder="89446840" required>
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" id="password" name="Contraseña" placeholder="1TE4567890" required>
+                        <label for="confirmar_contraseña">Confirmar Contraseña:</label>
+                        <input type="password" id="confirm_password" name="confirm_password"
+                            placeholder="Repite la contraseña" required>
+                    </div>
+                </div>
+                <button type="submit" onclick = "registrarCliente(event)">Registrar</button>
+            </form>
+            </div>
+            
+        </div>
     </div>
 
 </body>
