@@ -60,7 +60,7 @@ class PDF extends FPDF
       $this->SetTextColor(218, 17, 36);
       $this->Cell(50); // mover a la derecha
       $this->SetFont('Arial', 'B', 15);
-      $this->Cell(100, 10, utf8_decode("INFORME DE CLIENTES "), 0, 1, 'C', 0);
+      $this->Cell(100, 10, utf8_decode("INFORME DE VENTAS"), 0, 1, 'C', 0);
       $this->Ln(7);
 
       /* CAMPOS DE LA TABLA */
@@ -69,11 +69,14 @@ class PDF extends FPDF
       $this->SetTextColor(255, 255, 255); //colorTexto
       $this->SetDrawColor(163, 163, 163); //colorBorde
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(30, 10, utf8_decode('CI'), 1, 0, 'C', 1);
-      $this->Cell(30, 10, utf8_decode('AP_PATERNO'), 1, 0, 'C', 1);
-      $this->Cell(38, 10, utf8_decode('NOMBRE'), 1, 0, 'C', 1);
-      $this->Cell(25, 10, utf8_decode('TELEFONO'), 1, 0, 'C', 1);
-      $this->Cell(70, 10, utf8_decode('EMAIL'), 1, 1, 'C', 1);
+      $this->Cell(23, 10, utf8_decode('FECHA'), 1, 0, 'C', 1);
+      $this->Cell(21, 10, utf8_decode('CANTIDAD'), 1, 0, 'C', 1);
+      $this->Cell(30, 10, utf8_decode('MONTO TOTAL'), 1, 0, 'C', 1);
+      $this->Cell(30, 10, utf8_decode('AP. PATERNO'), 1, 0, 'C', 1);
+      $this->Cell(30, 10, utf8_decode('AP. MATERNO'), 1, 0, 'C', 1);
+      $this->Cell(33, 10, utf8_decode('NOMBRES'), 1, 0, 'C', 1);
+      $this->Cell(23, 10, utf8_decode('CI'), 1, 1, 'C', 1);
+      // $this->Cell(70, 10, utf8_decode('EMAIL'), 1, 1, 'C', 1);
    }
 
 
@@ -103,7 +106,7 @@ class PDF extends FPDF
 //$dato_info = $consulta_info->fetch_object();
 
 require("dbcon.php"); 
-$sql_clientes = ("SELECT * FROM `persona` JOIN `usuario` WHERE persona.ID_PERSONA = usuario.ID_PERSONA AND ID_ROL = 1;");
+$sql_clientes = ("SELECT * FROM venta JOIN recibo JOIN persona WHERE venta.ID_RECIBO = recibo.ID_RECIBO AND recibo.ID_PERSONA = persona.ID_PERSONA;");
 $resultado = $mysqli->query($sql_clientes);
 
 $pdf = new PDF();
@@ -115,14 +118,16 @@ $pdf->SetDrawColor(163, 163, 163); //colorBorde
 /*$consulta_reporte_alquiler = $conexion->query("  ");*/
 
 while($row = $resultado -> fetch_assoc()){
-   $pdf->Cell(30, 10, $row['CI'], 1, 0, 'C', 0);
+   $pdf->Cell(23, 10, $row['FECHA_VENTA'], 1, 0, 'C', 0);
+   $pdf->Cell(21, 10, $row['CANTIDAD'], 1, 0, 'C', 0);
+   $pdf->Cell(30 , 10, $row['MONTO_UNIDAD'], 1, 0, 'C', 0);
    $pdf->Cell(30, 10, $row['AP_PATERNO'], 1, 0, 'C', 0);
-   $pdf->Cell(38 , 10, $row['NOMBRES'], 1, 0, 'C', 0);
-   $pdf->Cell(25, 10, $row['TELEFONO'], 1, 0, 'C', 0);
-   $pdf->Cell(70, 10, $row['CORREO_ELECTRONICO'], 1, 1, 'C', 0);
+   $pdf->Cell(30, 10, $row['AP_MATERNO'], 1, 0, 'C', 0);
+   $pdf->Cell(33, 10, $row['NOMBRES'], 1, 0, 'C', 0);
+   $pdf->Cell(23, 10, $row['CI'], 1, 1, 'C', 0);
+   // $pdf->Cell(70, 10, $row['CORREO_ELECTRONICO'], 1, 1, 'C', 0);
 }
 
-
-$pdf->Output('InformeClientes.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)\
+$pdf->Output('InformeVentas.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)\
 
 ?>

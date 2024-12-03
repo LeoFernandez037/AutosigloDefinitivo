@@ -31,10 +31,10 @@
                         </li>
                         <!-- <li class="sidebar-item">
                             <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Vehiculos</a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Ventas</a>
                         </li> -->
+                        <li class="sidebar-item">
+                            <a href="informeventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Ventas</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">

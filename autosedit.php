@@ -158,7 +158,7 @@
                 <a class="modal_close" href="autosadminedit.php?id=<?php echo $id?>">x</a>
             </div>
             <h2>Editar Auto</h2>
-            <form action="autosedit.php?id=<?php echo $id?>&id_auto=<?php echo $id_auto?>" method="POST" enctype="multipart/form-data">
+            <form action="autossave.php?id=<?php echo $id?>&id_auto=<?php echo $id_auto?>" method="POST" enctype="multipart/form-data">
                 <input style= "visibility:hidden;" type="text" id="id" name="id" value = "<?php echo $id?>">
                 <input style= "visibility:hidden;" type="text" id="caracteristica" name="caracteristica" value = "<?php echo  $caracteristica?>">
                 <div class="form-container">

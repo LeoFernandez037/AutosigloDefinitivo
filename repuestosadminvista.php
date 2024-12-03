@@ -31,8 +31,8 @@
                 <h2>Listado de Repuestos </h2>
                 <a href="#agregarAuto" class="btn btn-primary btn-sm" style = "margin-left:10px;">Agregar auto +</a>
                 <!-- <a class="modal_close" href="">&times;</a> -->
-                <a href="empleadosadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Refrescar Tabla</a>
-                <a href="empleadosadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Exportar hoja de calculo</a>
+                <a href="repuestosadminvista.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Refrescar Tabla</a>
+        
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                     <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";

@@ -30,7 +30,7 @@
     <main>
         <div class="contact-form">
             <h2>Mandanos un mensaje</h2>
-            <form method="POST" action="https://formsubmit.co/carlymar204@gmail.com">
+            <form method="POST" action="https://formsubmit.co/andres10000fky@gmail.com">
                 <div class="form-group">
                     <input type="email" name="email" placeholder="Email" required>
                 </div>
@@ -41,7 +41,7 @@
                     <textarea name="message" placeholder="Mensaje" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Enviar</button>
-                <input type="hidden" name="_next" value="http://localhost/AutosigloDefinitivo/contacto.php">
+                <input type="hidden" name="_next" value="https://localhost/AutosigloDefinitivo/contacto.php">
                 <input type="hidden" name="_captcha" value="false">
             </form>
         </div>

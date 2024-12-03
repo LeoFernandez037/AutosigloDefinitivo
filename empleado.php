@@ -37,7 +37,7 @@
                         echo $row['NOMBRES']; ?></h3>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                    <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA= $id";
+                                    <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA = $id";
             $result = mysqli_query($conn, $query);
             $row = $result->fetch_assoc();
             echo $row['FOTO'];?>

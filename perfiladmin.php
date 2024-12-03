@@ -55,6 +55,10 @@
                 <h2>Perfil</h2>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
+                    <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
+                        $result = mysqli_query($conn, $query);
+                        $row = $result->fetch_assoc();
+                        echo $row['NOMBRES']; ?></h3>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA = $id";
@@ -77,7 +81,7 @@
                                     $row = $result->fetch_assoc();
                                     echo $row['FOTO'];?>
                         class="img_prev" alt="no hay imagen">
-                    <form class="formprof" action="perfil.php?id=<?php echo $_GET['id']; ?>" method="POST">            
+                    <form class="formprof" action="perfiladmin.php?id=<?php echo $_GET['id']; ?>" method="POST">            
                         <div class="contlabel">
                         <h4>Nombre</h4>
                         <div class="form-group">
