@@ -228,13 +228,13 @@ h6 {
 }
 
 .col-md-8 {
-    width: 80%;
+    width: 80% !important;
     margin-left: 140px;
     margin-bottom: 20px;
     /* overflow-x: hidden;
     overflow-y: auto; */
     white-space: nowrap;
-    height: 740px;
+    height: 740px !important;
 }
 
 .boton-imprimir {
@@ -247,9 +247,10 @@ h6 {
 
 
 .container_venta {
-    margin-left: 400px;
-    width: 600px;
-    height: 445px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
 }
 
 .modal {
@@ -396,4 +397,58 @@ h6 {
 
 #contemp {
     height: 746px !important;
+}
+
+.coso {
+    color: black;
+    background-color: #FF6060;
+}
+
+#clientesTable {
+    min-width: 60px;
+    max-width: fit-content;
+    border: 1px solid black;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+#clientesTable th {
+    text-align: center;
+}
+
+#seleccionForm {
+    padding: 10px;
+    display: flex;
+    height: 100%;
+}
+
+#productosTable {
+    min-width: 60px;
+    max-width: fit-content;
+    border: 1px solid black;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+#productosTable th {
+    text-align: center;
+}
+
+.objcont {
+    padding: 20px;
+}
+
+.btn:disabled {
+    background-color: #FF6060;
+}
+
+#seleccion {
+    margin-top: 20px;
+    font-size: larger;
+    width: 450px;
+    height: 280px;
+    background-color: #1B232C;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 20px;
 }

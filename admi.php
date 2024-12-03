@@ -103,7 +103,7 @@
                             <div class="card-body p-0 d-flex flex-fill">
                                 <div class="row g-0 w-100">
                                     <div class="p-3 m-1">
-                                        <h4>Ventas totales:    <?php $query = "SELECT COUNT(ID_RECIBO) AS 'Ventas Totales' FROM recibo;";
+                                        <h4>Ventas totales:    <?php $query = "SELECT COUNT(ID_VENTA) AS 'Ventas Totales' FROM venta;";
         $result = mysqli_query($conn, $query);
         $row = $result->fetch_assoc();
         echo $row['Ventas Totales']; ?></h4>

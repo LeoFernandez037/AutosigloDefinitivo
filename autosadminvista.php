@@ -126,7 +126,7 @@
         <div class="modal-content">
             <div class="login-box">
                 <div class="close-btn">
-                    <a class="modal_close" href="autosadmin.php?id=<?php echo $id?>">X</a>
+                    <a class="modal_close" style="color:white;"  href="autosadmin.php?id=<?php echo $id?>">X</a>
                 </div>
                 <?php include('db.php');
                         if (isset($_GET['id_auto'])) {

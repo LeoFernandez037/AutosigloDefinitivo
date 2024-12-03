@@ -55,6 +55,10 @@
                 <h2>Perfil</h2>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
+                    <h3>Empleado    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
+                        $result = mysqli_query($conn, $query);
+                        $row = $result->fetch_assoc();
+                        echo $row['NOMBRES']; ?></h3>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA = $id";
@@ -71,7 +75,7 @@
                 </div>
             </nav>
             <div class="profile">
-                <div class="tarjetaprofile">
+                <div class="tarjetaprofile" style="margin-bottom: 296px;">
                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA = $id";
                                     $result = mysqli_query($conn, $query);
                                     $row = $result->fetch_assoc();

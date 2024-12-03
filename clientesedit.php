@@ -72,7 +72,7 @@
 
                             while($row = mysqli_fetch_array($result_tasks)) { ?>
                                 <tr>
-                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 60px;  border-radius: 100%;" srcset=""></td>
+                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 40px;  border-radius: 100%;" srcset=""></td>
                                     <td><?php echo $row['NOMBRES']; ?></td>
                                     <td><?php echo $row['CORREO_ELECTRONICO']; ?></td>
                                     <td><?php echo $row['TELEFONO']; ?></td>

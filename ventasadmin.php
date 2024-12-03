@@ -30,7 +30,10 @@ $id = $_GET['id'];
                 <button class="boton-imprimir" onclick="printDiv('printableArea')">Imprimir Informe</button>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
-                   
+                    <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
+                        $result = mysqli_query($conn, $query);
+                        $row = $result->fetch_assoc();
+                        echo $row['NOMBRES']; ?></h3>
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA = $id";
@@ -53,13 +56,14 @@ $id = $_GET['id'];
                         <thead>
                             <th>Id Venta</th>
                             <th>Fecha Venta</th>
+                            <th>Cliente</th>
                             <th>Cantidad</th>
                             <th>Monto Unidad</th>
                             <th>Monto Total</th>
                         </thead>
                         <tbody>
                             <?php  
-                                $query = "SELECT * FROM venta";
+                                $query = "SELECT * FROM `venta`JOIN `recibo` WHERE venta.ID_RECIBO = recibo.ID_RECIBO;";
                                 $result_tasks = mysqli_query($conn, $query);
 
                                 while($row = mysqli_fetch_array($result_tasks)){?>
@@ -68,7 +72,10 @@ $id = $_GET['id'];
                                             <?php echo $row['ID_VENTA'] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row['FECHA_VENTA'] ?>
+                                            <?php echo $row['FECHA_VENTA'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $row['RAZON_SOCIAL'] ?>
                                         </td>
                                         <td>
                                             <?php echo $row['CANTIDAD'] ?>

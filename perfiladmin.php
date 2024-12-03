@@ -71,7 +71,7 @@
                 </div>
             </nav>
             <div class="profile">
-                <div class="tarjetaprofile">
+                <div class="tarjetaprofile" style="margin-bottom: 296px;">
                     <img src=  <?php $query = "SELECT * FROM usuario WHERE ID_PERSONA = $id";
                                     $result = mysqli_query($conn, $query);
                                     $row = $result->fetch_assoc();

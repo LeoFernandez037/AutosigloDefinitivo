@@ -29,12 +29,12 @@
                         <li class="sidebar-item">
                             <a href="informeclientesadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Clientes</a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a href="informeautosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Vehiculos</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Informe Ventas</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li class="sidebar-item">
@@ -105,12 +105,12 @@
                         <li class="sidebar-item">
                             <a href="repuestosadmin.php?id=<?php echo $id?>" class="sidebar-link">•     Ver listado</a>
                         </li>
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a href="empleadosadminedit.php?id=<?php echo $id?>" class="sidebar-link">•     Editar repuestos</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="empleadosadmindelete.php?id=<?php echo $id?>" class="sidebar-link">•     Eliminar repuestos</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <!-- <li class="sidebar-item">
@@ -130,7 +130,7 @@
                     </ul>
                 </li> -->
                 <li class="sidebar-item">
-                    <a href="ventasadmin.php?id=<?php echo $id?>" class="sidebar-link">
+                    <a href="nuevaVentaAdmin.php?id=<?php echo $id?>" class="sidebar-link">
                         <img src="./pen.png" alt="">
                         <span>Ventas</span>
                     </a>

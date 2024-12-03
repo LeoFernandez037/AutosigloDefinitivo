@@ -72,12 +72,24 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 1200px;
+    width: 1000px;
     height: 600px;
     background: linear-gradient(to right, rgb(28, 35, 49), rgb(220, 53, 69));
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+.car-details2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 800px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 
 .car-image {
     display: flex;
@@ -124,6 +136,17 @@ main {
     align-items: start;
     justify-content: center;
     color: white;
+    margin: 0;
+    width: 60%;
+    height: 550px;
+}
+
+.car-info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    color: black;
     margin: 0;
     width: 60%;
     height: 550px;

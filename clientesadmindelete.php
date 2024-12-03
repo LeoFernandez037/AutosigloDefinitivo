@@ -14,6 +14,12 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+    
+    <script src="https://unpkg.com/xlsx@latest/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type = "text/css" href="dataTables/datatables.min.css" >
     <title>Clientes</title>
@@ -30,8 +36,10 @@
             <nav class="navbar navbar-expand px-3 border-bottom">
                 <h2>Eliminar clientes</h2>
                                 <!-- <a class="modal_close" href="">&times;</a> -->
-                <a href="empleadosadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Refrescar Tabla</a>
-                <a href="empleadosadmin.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Exportar hoja de calculo</a>
+                <a href="clientesadmindelete.php?id=<?php echo $id?>" class="btn btn-success btn-sm" style = "margin-left:10px;">Refrescar Tabla</a>
+                <button id="btnExportar" style = "margin-left:10px;" class="btn btn-success btn-sm">
+                <i class="fas fa-file-excel"></i> Exportar datos a Excel
+                </button>
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                     <h3>Administrador    <?php $query = "SELECT * FROM persona WHERE ID_PERSONA = $id";
@@ -73,7 +81,7 @@
 
                             while($row = mysqli_fetch_array($result_tasks)) { ?>
                                 <tr>
-                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 60px;  border-radius: 100%;" srcset=""></td>
+                                    <td> <img src="<?php echo $row['FOTO']; ?>" alt="nai" style="margin-left: 50px; width: 40px;  border-radius: 100%;" srcset=""></td>
                                     <td><?php echo $row['NOMBRES']; ?></td>
                                     <td><?php echo $row['CORREO_ELECTRONICO']; ?></td>
                                     <td><?php echo $row['TELEFONO']; ?></td>
@@ -108,6 +116,36 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+
+
+        <script>
+        //bajo el formato ISO 8601 EJ 20201006-103045 
+        document.addEventListener('DOMContentLoaded', function(){
+            const $btnExportar = document.querySelector("#btnExportar"),
+            $tabla = document.querySelector("#example");
+            var currentdate = new Date().toISOString();
+            console.log(currentdate);
+            let tableExport = new TableExport($tabla, {
+                exportButtons: false,
+                filename: "DatosClientes"+ currentdate ,
+                sheetname: "Tabla",
+            });
+
+            $btnExportar.addEventListener("click", function(){
+                let datos = tableExport.getExportData();
+                let pref = datos.example.xlsx;
+                tableExport.export2file(
+                    pref.data,
+                    pref.mimeType,
+                    pref.filename,
+                    pref.fileExtension,
+                    pref.merges,
+                    pref.RTL,
+                    pref.sheetname
+                );
+            });
+        });
+    </script>
 </body>
 
 </html>

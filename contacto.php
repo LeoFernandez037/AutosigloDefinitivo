@@ -53,7 +53,7 @@
                     Av. Revolución 1234 y Col. Moderna, 12345<br>
                     Ciudad de La Paz, Bolivia</p>
                 <h4>Teléfono</h4>
-                <p>+52 (55) 1234 5678</p>
+                <p>+591 72345678</p>
                 <h4>Email</h4>
                 <p>info@autosiglo.com</p>
                 <h4>Horario de Atención</h4>

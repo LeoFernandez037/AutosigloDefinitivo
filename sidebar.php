@@ -33,7 +33,7 @@
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="autosadmin2.php?id=<?php echo $id?>" class="sidebar-link">Autos</a>
+                            <a href="autosempleado.php?id=<?php echo $id?>" class="sidebar-link">Autos</a>
                         </li>
                         <li class="sidebar-item">
                             <a href="repuestos.php?id=<?php echo $id?>" class="sidebar-link">Repuestos</a>
